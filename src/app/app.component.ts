@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Sensores } from './modelos/sensores';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'IntegradorAngular';
+  title = 'Security Car';
+  sensoresArray: Sensores[] = [
+    {id: 1, nombre: "Temperatura"},
+    {id: 2, nombre: "Humedad"},
+    {id: 3, nombre: "Proximidad"}
+  ];
 }

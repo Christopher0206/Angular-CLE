@@ -1,23 +1,30 @@
-<div class="container mt-4" style="padding-left: 5%;">
+
+<nav class="navbar navbar-dark bg-primary">
+    <a class="navbar-brand" href="/">
+        ㅤSensores 
+     </a>
+   </nav>
+
+   <div class="container">
     <div class="row">
-        <div class="col-md-4" style="padding: 1%; " >
-        <div class="card" style="width: 18rem;">
-            <img src="../../assets/img/tigre.png" class="img-thumbnail" alt="...">
-            <div class="card-body">
-            
-            <p class="card-text text-center">
-                <span class="d-inline-block h4 align-self-center " style="max-width: 100%; text-decoration-color: darkgreen;">
-                    Tigre
-                </span>
-            </p>
-            <div class="d-grid gap-2">
-                <button class="btn btn-success" id="fondo" type="button">Ver</button>
-            </div>
-            </div>
-        </div>
+      <div class="col-md-8">
+    <ul class="list-group">
+      <li 
+      *ngFor= "let sensor sensoresArray"
+      class="list-group-item">
+                {{ sensor.nombre}}
+      </li>
+    </ul> 
+    <div class="card mt-4">
+   <div class="card-body">
+    <div class="card-title">
+       Inserte nuevo sensor
     </div>
-
-</div>
-</div>
-
-            
+   </div>
+    </div>                 
+      </div>
+      <div class="col-md-4">
+        <img width="300" alt="Angular Logo" src="http://assets.stickpng.com/images/584830fecef1014c0b5e4aa2.png">
+     </div>
+    </div>
+  </div>
