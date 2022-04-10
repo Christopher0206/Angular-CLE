@@ -1,3 +1,4 @@
+import { Sensor } from './../../../models/sensor';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AnimalesComponent implements OnInit {
 
-  constructor() { }
+ 
+    sensoresArray: Sensor[] = [
+      {id:1, Nombre:"Christopher"},
+      {id:2, Nombre:"Juan"},
+    ];
+  
 
   ngOnInit(): void {
   }
