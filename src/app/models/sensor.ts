@@ -1,4 +1,4 @@
-export class Sensor {
-    "id":number;   
-    "Nombre":string;
+export interface Sensor {
+    "id":'';   
+    "Nombre":'';
 }

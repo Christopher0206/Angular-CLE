@@ -5,26 +5,28 @@
      </a>
    </nav>
 
-   <div class="container">
-    <div class="row">
-      <div class="col-md-8">
-    <ul class="list-group">
-      <li 
-      *ngFor= "let sensor sensoresArray"
-      class="list-group-item">
-                {{ sensor.nombre}}
-      </li>
-    </ul> 
-    <div class="card mt-4">
-   <div class="card-body">
-    <div class="card-title">
-       Inserte nuevo sensor
-    </div>
-   </div>
-    </div>                 
-      </div>
-      <div class="col-md-4">
-        <img width="300" alt="Angular Logo" src="http://assets.stickpng.com/images/584830fecef1014c0b5e4aa2.png">
-     </div>
-    </div>
-  </div>
+   <div class="container" >
+    <form [formGroup]="FormularioRegistro" >
+      <div>
+  
+          <label  class="form-label" >Sensor</label>
+          <input type="text" class="form-control"  formControlName="Nombre_Papa" [(ngModel)]="sensor.Nombre" >
+          </div><br>
+              <button (click)="crearSensor()" (click)="showModal()" class="btn btn-primary">Guardar</button>
+              <a  class="btn btn-danger" routerLink="/administrador">Cancelar</a>
+      </form>
+      <h3>Sensores</h3>
+      <div class="containerproductos mb-3">
+        <table class="table table-striped table-hover border abajoArriba">
+            <thead>
+              <tr>
+                <th scope="col">Sensor Lista</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let sensor of sensores">
+                <td>{{sensor.Nombre}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
