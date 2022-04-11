@@ -1,3 +1,4 @@
+import { Sensor } from './models/sensor';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
@@ -9,14 +10,14 @@ export class ServiceService {
   constructor(private httpcliente:HttpClient) { 
 
   }
-  crearSensor(papa:any){
+  crearSensor(sensor:any){
     const token=localStorage.getItem("token")
 
 
     const tokenHeader=new HttpHeaders({
       'Authorization':'Bearer '+ token
     })
-    return this.httpcliente.post('Aqui va la api',papa,{headers:tokenHeader})
+    return this.httpcliente.post('Aqui va la api',sensor,{headers:tokenHeader})
   }
   mostrarSensor(){
     const token=localStorage.getItem("token")
