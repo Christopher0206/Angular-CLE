@@ -9,7 +9,7 @@ import {Observable} from 'rxjs'
 })
 export class ServiceService {
 
-  url:string = "https://solodata.es/";
+  url:string = "AQUI VA LA API";
 
   constructor(private httpcliente:HttpClient) { }
 

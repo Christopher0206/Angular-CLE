@@ -10,10 +10,10 @@ import { Login} from '../../../models/login'
 })
 export class LoginComponent implements OnInit {
 
-  LoginForm = new FormGroup({
-    usuario : new FormControl('', Validators.required),
-    password : new FormControl('',Validators.required)
-  })
+  //LoginForm = new FormGroup({
+    //usuario : new FormControl('', Validators.required),
+    //password : new FormControl('',Validators.required)
+  //})
 
   constructor(private api:ServiceService) { }
 
