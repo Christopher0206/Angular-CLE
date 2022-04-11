@@ -20,7 +20,7 @@ const routes: Routes = [
     {path:'mapa', component:MapaComponent},
     {path:'registro-user', component: RegistroUserComponent},
     {path:'login', component: LoginComponent},
-    {path: 'form-animales', component: FormAnimalesComponent},
+    {path:'form-animales', component: FormAnimalesComponent},
     {path:'form-especies', component: FormEspeciesComponent}
   
 ];
