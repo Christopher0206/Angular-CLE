@@ -1,13 +1,23 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Login } from '../app/models/login'
+import { Response } from '../app/models/response'
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import {Observable} from 'rxjs'
 
 @Injectable({
   providedIn: 'root'
 })
 export class ServiceService {
 
-  constructor(private httpcliente:HttpClient) { 
+  url:string = "https://solodata.es/";
 
+  constructor(private httpcliente:HttpClient) { }
+
+  loginByEmail(form:Login):Observable<Response>{
+
+    let direccion = this.url + "auth";
+    return this.httpcliente.post<Response>(direccion,form)
+    
   }
   crearSensor(papa:any){
     const token=localStorage.getItem("token")
