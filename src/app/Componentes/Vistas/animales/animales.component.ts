@@ -35,7 +35,7 @@ export class AnimalesComponent implements OnInit {
     showModal(){
       if(this.FormularioRegistro.valid){
         Swal({
-          title: "Sensor Registrado",
+          title: "Sensor Registrado Con Exito",
           icon: "success",
         });
       }
