@@ -6,8 +6,6 @@ import { AppRoutingModule } from './app-routing.module';
 import {HttpClientModule} from '@angular/common/http' 
 
 import { AppComponent } from './app.component';
-import { FormAnimalesComponent } from './Componentes/Formularios/form-animales/form-animales.component';
-import { FormEspeciesComponent } from './Componentes/Formularios/form-especies/form-especies.component';
 import { DashboardAdminComponent } from './Componentes/Vistas/dashboard-admin/dashboard-admin.component';
 import { NavBarComponent } from './Componentes/Vistas/nav-bar/nav-bar.component';
 import { FooterComponent } from './Componentes/Vistas/footer/footer.component';
@@ -26,8 +24,6 @@ import { LoginComponent } from './Componentes/Auth/login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
-    FormAnimalesComponent,
-    FormEspeciesComponent,
     DashboardAdminComponent,
     NavBarComponent,
     FooterComponent,
