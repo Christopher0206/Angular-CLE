@@ -10,7 +10,6 @@ import { DashboardAdminComponent } from './Componentes/Vistas/dashboard-admin/da
 import { NavBarComponent } from './Componentes/Vistas/nav-bar/nav-bar.component';
 import { FooterComponent } from './Componentes/Vistas/footer/footer.component';
 import { DashboardComponent } from './Componentes/Vistas/dashboard/dashboard.component';
-import { AboutComponent } from './Componentes/Vistas/about/about.component';
 import { HomeComponent } from './Componentes/Vistas/home/home.component';
 import { SidebarComponent } from './Componentes/Vistas/sidebar/sidebar.component';
 import { AnimalesComponent } from './Componentes/Vistas/animales/animales.component';
@@ -28,7 +27,6 @@ import { LoginComponent } from './Componentes/Auth/login/login.component';
     NavBarComponent,
     FooterComponent,
     DashboardComponent,
-    AboutComponent,
     HomeComponent,
     SidebarComponent,
     AnimalesComponent,
