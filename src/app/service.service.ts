@@ -26,7 +26,7 @@ export class ServiceService {
     const tokenHeader=new HttpHeaders({
       'Authorization':'Bearer '+ token
     })
-    return this.httpcliente.post('http://143.244.174.46:3333/crearSensores',sensor,{headers:tokenHeader})
+    return this.httpcliente.post('http://143.244.174.46:42917/crearSensores',sensor,{headers:tokenHeader})
   }
   mostrarSensor(){
     const token=localStorage.getItem("token")
