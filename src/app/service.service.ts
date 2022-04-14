@@ -19,14 +19,14 @@ export class ServiceService {
     return this.httpcliente.post<Response>(direccion,form)
     
   }
-  crearSensor(papa:any){
+  crearSensor(sensor:any){
     const token=localStorage.getItem("token")
 
 
     const tokenHeader=new HttpHeaders({
       'Authorization':'Bearer '+ token
     })
-    return this.httpcliente.post('Aqui va la api',papa,{headers:tokenHeader})
+    return this.httpcliente.post('http://143.244.174.46:3333/crearSensores',sensor,{headers:tokenHeader})
   }
   mostrarSensor(){
     const token=localStorage.getItem("token")
