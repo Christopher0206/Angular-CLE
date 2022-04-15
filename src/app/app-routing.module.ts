@@ -2,22 +2,26 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './Componentes/Auth/login/login.component';
 import { RegistroUserComponent } from './Componentes/Auth/registro-user/registro-user.component';
-
-import { AnimalesComponent } from './Componentes/Vistas/animales/animales.component';
+import { SensorComponent } from './Componentes/Vistas/sensor/sensor.component';
 import { HomeComponent } from './Componentes/Vistas/home/home.component';
-import { MapaComponent } from './Componentes/Vistas/mapa/mapa.component';
+import { DocumentacionComponent } from './Componentes/Vistas/documentacion/documentacion.component';
+import { GraficasComponent } from './Componentes/Vistas/graficas/graficas.component';
 import { SidebarComponent } from './Componentes/Vistas/sidebar/sidebar.component';
+import { HistorialComponent } from './Componentes/Vistas/historial/historial.component';
+
 
 
 const routes: Routes = [
-      {path:'', redirectTo: '/home', pathMatch: 'full'},
-      {path:'home', component: HomeComponent},
+    {path:'', redirectTo: '/home', pathMatch: 'full'},
+    {path:'home', component: HomeComponent},
     {path:'sidebar', component: SidebarComponent},
-    
-    {path:'animales', component: AnimalesComponent},
-    {path:'mapa', component:MapaComponent},
+    {path:'sensores', component: SensorComponent},
+    {path:'documentacion', component:DocumentacionComponent},
     {path:'registro-user', component: RegistroUserComponent},
-    {path:'login', component: LoginComponent}
+    {path:'login', component: LoginComponent},
+    {path:'graficas', component: GraficasComponent},
+    {path:'historial', component: HistorialComponent}
+  
   
 ];
 

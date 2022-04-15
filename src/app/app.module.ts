@@ -12,10 +12,13 @@ import { FooterComponent } from './Componentes/Vistas/footer/footer.component';
 import { DashboardComponent } from './Componentes/Vistas/dashboard/dashboard.component';
 import { HomeComponent } from './Componentes/Vistas/home/home.component';
 import { SidebarComponent } from './Componentes/Vistas/sidebar/sidebar.component';
-import { AnimalesComponent } from './Componentes/Vistas/animales/animales.component';
-import { MapaComponent } from './Componentes/Vistas/mapa/mapa.component';
 import { RegistroUserComponent } from './Componentes/Auth/registro-user/registro-user.component';
 import { LoginComponent } from './Componentes/Auth/login/login.component';
+import { SensorComponent } from './Componentes/Vistas/sensor/sensor.component';
+import { DocumentacionComponent } from './Componentes/Vistas/documentacion/documentacion.component';
+import { GraficasComponent } from './Componentes/Vistas/graficas/graficas.component';
+import { HistorialComponent } from './Componentes/Vistas/historial/historial.component';
+
 
 
 //  AppRoutingModule,ReactiveFormsModule, FormsModule,HttpClientModule,
@@ -29,11 +32,13 @@ import { LoginComponent } from './Componentes/Auth/login/login.component';
     DashboardComponent,
     HomeComponent,
     SidebarComponent,
-    AnimalesComponent,
-    MapaComponent,
     RegistroUserComponent,
-    LoginComponent
-  ],
+    LoginComponent,
+    SensorComponent,
+    DocumentacionComponent,
+    GraficasComponent,
+    HistorialComponent
+  ],                                                           
   imports: [
     BrowserModule,
     RouterModule,
