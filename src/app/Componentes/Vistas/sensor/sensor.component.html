@@ -7,20 +7,21 @@
    <br>
 
     <!--AQUI SON LOS BOTONES Y REGISTRO DE SENSORES -->
-   <div class="container" >
+   <div class="container"   >
     <form [formGroup]="FormularioRegistro" >
       <div>
   
-          <label  class="form-label" >Sensor</label>
+          <label  class="form-label" >Inserte un nuevo sensor</label>
           <input type="text" class="form-control"  formControlName="Nombre_Sensor" [(ngModel)]="sensor.Nombre" >
           </div>
           <br>
               <button (click)="crearSensor()" (click)="showModal()" class="btn btn-primary">Guardar</button>
               <p> </p>
-              <a  class="btn btn-danger" routerLink="/administrador">Cancelar</a>
+              <a  class="btn btn-danger" routerLink="/sensores">Cancelar</a>
       </form>
         <!--AQUI ES UN FORMULARIO -->
       <h3>Sensores</h3>
+      
   
       <div class="containerproductos mb-3">
         <table class="table table-striped table-hover border abajoArriba">
@@ -36,3 +37,5 @@
             </tbody>
           </table>
         </div>
+
+      
