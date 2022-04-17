@@ -5,12 +5,12 @@
         <h4 class="mt-1 mb-5 pb-1"> Security Car</h4>
     </div>
 
-    <form>
+    <form [formGroup]="formularioregistro">
      
 
         <div class="form-outline mb-4">
         <label class="form-label" for="username">Nombre de Usuario</label>
-        <input formControlName="username" type="email" id="username" class="form-control" placeholder="Nombre De Usuario"/>
+        <input formControlName="username"  [(ngModel)]= "usuario.email" type="email" id="username" class="form-control" placeholder="Nombre De Usuario"/>
        </div>
         <div class="form-outline mb-4">
         <label class="form-label" for="email">Correo Electronico</label>
@@ -18,7 +18,7 @@
         </div>
         <div class="form-outline mb-4">
         <label class="form-label" for="password">Contraseña</label>
-        <input formControlName="password" type="password" id="password" class="form-control" placeholder="Contraseña"/>
+        <input formControlName="password" [(ngModel)]= "usuario.password" type="password" id="password" class="form-control" placeholder="Contraseña"/>
         </div>
         <div class="form-outline mb-4">
         <label class="form-label" for="password2">Confirmar Contraseña</label>
@@ -28,7 +28,7 @@
         
 
         <div class="text-center pt-1 mb-5 pb-1">
-        <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit">Registrarse</button>
+        <button routerLink="/login" (click)="registrar()" class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit">Registrarse</button>
         </div>
 
 
