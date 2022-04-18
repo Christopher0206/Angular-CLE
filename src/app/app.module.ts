@@ -18,6 +18,7 @@ import { SensorComponent } from './Componentes/Vistas/sensor/sensor.component';
 import { DocumentacionComponent } from './Componentes/Vistas/documentacion/documentacion.component';
 import { GraficasComponent } from './Componentes/Vistas/graficas/graficas.component';
 import { HistorialComponent } from './Componentes/Vistas/historial/historial.component';
+import { RegisensorComponent } from './Componentes/Vistas/regisensor/regisensor.component';
 
 
 
@@ -37,7 +38,8 @@ import { HistorialComponent } from './Componentes/Vistas/historial/historial.com
     SensorComponent,
     DocumentacionComponent,
     GraficasComponent,
-    HistorialComponent
+    HistorialComponent,
+    RegisensorComponent
   ],                                                           
   imports: [
     BrowserModule,
