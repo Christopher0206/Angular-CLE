@@ -18,8 +18,16 @@
             <div class="card-body text-center">
                 <div class="ad-title m-auto">
                     <h5>Humedad y Temperatura</h5>
+                    <ul *ngFor="let temperatura of tempe">
+                        <li>{{temperatura.idH}}</li>
+                        <li>{{temperatura.idRU}}</li>
+                        <li>{{temperatura.idSensor}}</li>
+                        <li>{{temperatura.Temperatura}}</li>
+                        <li>{{temperatura.Humedad}}</li>
+                        <li>{{temperatura.Fechacreacion}}</li>
+                    </ul>
                 </div>
-                <a class="ad-btn" (click)="mandar()" >Agregar</a>
+                <a class="ad-btn" href="#">Agregar</a>
             </div>
         </div>
     </div>
@@ -34,6 +42,18 @@
             <div class="card-body text-center">
                 <div class="ad-title m-auto">
                     <h5>Giroscopio y Acelerometro</h5>
+                    <ul *ngFor="let acelerometro of acele">
+                        <li>{{acelerometro.idH}}</li>
+                        <li>{{acelerometro.idRU}}</li>
+                        <li>{{acelerometro.idSensor}}</li>
+                        <li>{{acelerometro.acel_x}}</li>
+                        <li>{{acelerometro.acel_y}}</li>
+                        <li>{{acelerometro.acel_z}}</li>
+                        <li>{{acelerometro.ang_x}}</li>
+                        <li>{{acelerometro.ang_y}}</li>
+                        <li>{{acelerometro.ang_z}}</li>
+                        <li>{{acelerometro.Fechacreacion}}</li>
+                    </ul>
                 </div>
                 <a class="ad-btn" href="#">Agregar</a>
             </div>
@@ -51,6 +71,13 @@
             <div class="card-body text-center">
                 <div class="ad-title m-auto">
                     <h5>Ultrasonico</h5>
+                    <ul *ngFor="let ultrasonico of ultra">
+                        <li>{{ultrasonico.idH}}</li>
+                        <li>{{ultrasonico.idRU}}</li>
+                        <li>{{ultrasonico.idSensor}}</li>
+                        <li>{{ultrasonico.Distancia}}</li>
+                        <li>{{ultrasonico.Fechacreacion}}</li>
+                    </ul>
                 </div>
                 <a class="ad-btn" href="#">Agregar</a>
             </div>
@@ -73,6 +100,13 @@
             <div class="card-body text-center">
                 <div class="ad-title m-auto">
                     <h5>Motor</h5>
+                    <ul *ngFor="let motores of motor">
+                        <li>{{motores.idH}}</li>
+                        <li>{{motores.idRU}}</li>
+                        <li>{{motores.idSensor}}</li>
+                        <li>{{motores.Posicion}}</li>
+                        <li>{{motores.Fechacreacion}}</li>
+                    </ul>
                 </div>
                 <a class="ad-btn" href="#">Agregar</a>
             </div>
@@ -89,6 +123,13 @@
             <div class="card-body text-center">
                 <div class="ad-title m-auto">
                     <h5>Servo-Motor</h5>
+                    <ul *ngFor="let motores of motor">
+                        <li>{{motores.idH}}</li>
+                        <li>{{motores.idRU}}</li>
+                        <li>{{motores.idSensor}}</li>
+                        <li>{{motores.Posicion}}</li>
+                        <li>{{motores.Fechacreacion}}</li>
+                    </ul>
                 </div>
                 <a class="ad-btn" href="#">Agregar</a>
             </div>
@@ -105,7 +146,14 @@
            
             <div class="card-body text-center">
                 <div class="ad-title m-auto">
-                    <h5>Igmar</h5>
+                    <h5>Impacto</h5>
+                    <ul *ngFor="let impacto of impac">
+                        <li>{{impacto.idH}}</li>
+                        <li>{{impacto.idRU}}</li>
+                        <li>{{impacto.idSensor}}</li>
+                        <li>{{impacto.Posicion}}</li>
+                        <li>{{impacto.Fechacreacion}}</li>
+                    </ul>
                 </div>
                 <a class="ad-btn" href="graficas">Agregar</a>
             </div>
