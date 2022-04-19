@@ -15,7 +15,10 @@ export class SensorComponent implements OnInit {
 
   sensor:Sensor= {
     "id":'',
-    "Nombre":''
+    "Nombre":'',
+    "Descripcion":'',
+    "Estado":'',
+    "Imagen":''
   }
   sensores:Sensor[]|undefined
   FormularioRegistro= new FormGroup({

@@ -1,5 +1,5 @@
 export interface Registro{
-    usuario:string;
-    correo:string;
+    
+    email:string;
     password:string;
 }

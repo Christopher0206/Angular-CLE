@@ -13,6 +13,10 @@ export class ServiceService {
 
   constructor(private httpcliente:HttpClient) { }
 
+  public registratse(object:any){
+    return this.httpcliente.post('',object)
+  }
+
   loginByEmail(form:Login):Observable<Response>{
 
     let direccion = this.url + "auth";

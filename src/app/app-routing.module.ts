@@ -8,6 +8,7 @@ import { DocumentacionComponent } from './Componentes/Vistas/documentacion/docum
 import { GraficasComponent } from './Componentes/Vistas/graficas/graficas.component';
 import { SidebarComponent } from './Componentes/Vistas/sidebar/sidebar.component';
 import { HistorialComponent } from './Componentes/Vistas/historial/historial.component';
+import { RegisensorComponent } from './Componentes/Vistas/regisensor/regisensor.component';
 
 
 
@@ -20,7 +21,8 @@ const routes: Routes = [
     {path:'registro-user', component: RegistroUserComponent},
     {path:'login', component: LoginComponent},
     {path:'graficas', component: GraficasComponent},
-    {path:'historial', component: HistorialComponent}
+    {path:'historial', component: HistorialComponent},
+    {path:'regis', component: RegisensorComponent}
   
   
 ];

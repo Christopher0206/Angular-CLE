@@ -1,41 +1,116 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-<nav class="navbar navbar-dark bg-primary">
-    <a class="navbar-brand" href="/">
-        ㅤSensores 
-     </a>
-   </nav>
-   <br>
 
-    <!--AQUI SON LOS BOTONES Y REGISTRO DE SENSORES -->
-   <div class="container"   >
-    <form [formGroup]="FormularioRegistro" >
-      <div>
-  
-          <label  class="form-label" >Inserte un nuevo sensor</label>
-          <input type="text" class="form-control"  formControlName="Nombre_Sensor" [(ngModel)]="sensor.Nombre" >
-          </div>
-          <br>
-              <button (click)="crearSensor()" (click)="showModal()" class="btn btn-primary">Guardar</button>
-              <p> </p>
-              <a  class="btn btn-danger" routerLink="/sensores">Cancelar</a>
-      </form>
-        <!--AQUI ES UN FORMULARIO -->
-      <h3>Sensores</h3>
-      
-  
-      <div class="containerproductos mb-3">
-        <table class="table table-striped table-hover border abajoArriba">
-            <thead>
-              <tr>
-                <th scope="col">LISTA DE SENSORES REGISTRADOS</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let sensor of sensores">
-                <td>{{sensor.Nombre}}</td>
-              </tr>
-            </tbody>
-          </table>
+<div class="container">
+    
+	<div class="row" id="ads">
+    
+    <div class="col-md-4">
+        <div class="card rounded">
+            <div class="card-image">
+                <span class="card-notify-badge">Sensor 1</span>
+               
+                <img class="img-fluid" src="https://i.linio.com/p/6c6d698fe6cd854ff27c3b43b5c6f61d-product.jpg" alt="Alternate Text" />
+            </div>
+            
+            <div class="card-body text-center">
+                <div class="ad-title m-auto">
+                    <h5>Humedad y Temperatura</h5>
+                </div>
+                <a class="ad-btn" href="#">Agregar</a>
+            </div>
         </div>
-        
-      
+    </div>
+    <div class="col-md-4">
+        <div class="card rounded">
+            <div class="card-image">
+                <span class="card-notify-badge">Sensor 2</span>
+                
+                <img class="img-fluid" src="https://electronicavaltierra.com.mx/wp-content/uploads/2018/09/mpu6050.jpg" alt="Alternate Text" />
+            </div>
+            
+            <div class="card-body text-center">
+                <div class="ad-title m-auto">
+                    <h5>Giroscopio y Acelerometro</h5>
+                </div>
+                <a class="ad-btn" href="#">Agregar</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card rounded">
+            <div class="card-image">
+                <span class="card-notify-badge">Sensor 3</span>
+               
+                <img class="img-fluid" src="https://mexico.newark.com/productimages/large/en_US/11X5783-40.jpg" alt="Alternate Text" />
+            </div>
+           
+            <div class="card-body text-center">
+                <div class="ad-title m-auto">
+                    <h5>Ultrasonico</h5>
+                </div>
+                <a class="ad-btn" href="#">Agregar</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!----------------------------------------------- Parte de abajo ------------------------------------------------------>
+<div class="container">
+    
+	<div class="row" id="ads">
+    
+    <div class="col-md-4">
+        <div class="card rounded">
+            <div class="card-image">
+                <span class="card-notify-badge">Sensor 4</span>
+               
+                <img class="img-fluid" src="https://i.linio.com/p/94004c4ef147d4c08244f984f1d0cd9f-product.jpg" alt="Alternate Text" />
+            </div>
+            
+            <div class="card-body text-center">
+                <div class="ad-title m-auto">
+                    <h5>Motor</h5>
+                </div>
+                <a class="ad-btn" href="#">Agregar</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card rounded">
+            <div class="card-image">
+                <span class="card-notify-badge">Sensor 5</span>
+                
+                <img class="img-fluid" src="https://www.steren.com.mx/media/catalog/product/cache/b69086f136192bea7a4d681a8eaf533d/image/19604fb71/micro-servomotor-con-torque-de-1-8-kgf-cm.jpg" alt="Alternate Text" />
+            </div>
+            
+            <div class="card-body text-center">
+                <div class="ad-title m-auto">
+                    <h5>Servo-Motor</h5>
+                </div>
+                <a class="ad-btn" href="#">Agregar</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card rounded">
+            <div class="card-image">
+                <span class="card-notify-badge">Sensor 6</span>
+               
+                <img class="img-fluid" src="https://media.elmostrador.cl/2017/11/Oompa-Loompa-468x263.jpg" alt="Alternate Text" />
+            </div>
+           
+            <div class="card-body text-center">
+                <div class="ad-title m-auto">
+                    <h5>Igmar</h5>
+                </div>
+                <a class="ad-btn" href="graficas">Agregar</a>
+            </div>
+        </div>
+    </div>
+
+</div>

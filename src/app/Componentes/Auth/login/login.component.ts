@@ -13,13 +13,15 @@ export class LoginComponent implements OnInit {
   //LoginForm = new FormGroup({
     //usuario : new FormControl('', Validators.required),
     //password : new FormControl('',Validators.required)
-  //})
+  //}
 
   constructor(private api:ServiceService) { }
 
   ngOnInit(): void {
 
   }
+
+  
 
   onLogin(form:Login){
     this.api.loginByEmail(form).subscribe(data =>{
