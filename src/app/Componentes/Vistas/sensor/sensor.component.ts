@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { interval } from 'rxjs';
 import { Sensor } from 'src/app/models/sensor';
-import { ServiceService } from 'src/app/service.service';
+import { SensorService } from 'src/app/servicio/sensores/sensores.service';
 import Swal from 'sweetalert';
 
 
@@ -12,56 +12,51 @@ import Swal from 'sweetalert';
   styleUrls: ['./sensor.component.css']
 })
 export class SensorComponent implements OnInit {
-  @Input() dataEntrante:any;
+  @Input() dataEntrante: any;
 
-  sensor:Sensor= {
-    "idSensor":'',
-    "Nombre":'',
-    "Descripcion":'',
-    "Estado":'',
-    "Imagen":''
-  }
-  sensores:Sensor[]|undefined
-  FormularioRegistro= new FormGroup({
-    Nombre_Sensor: new  FormControl(null,[Validators.required])
+  sensor!: Sensor
+  sensores: Sensor[] | undefined
+  FormularioRegistro = new FormGroup({
+    Nombre_Sensor: new FormControl(null, [Validators.required])
   })
 
-  constructor(private sensorservi:ServiceService){
-     const contador=interval(3000)
-    contador.subscribe(()=>{
-      this.sensorservi.mostrarSensor().subscribe((data:any)=>{
-        this.sensor=data
-      })
-    })  
+  constructor(private sensorservi: SensorService) {
+    const contador = interval(3000)
+    contador.subscribe(async () => {
+
+      (await this.sensorservi.mostrarSensor()).subscribe(
+        (res: any) => {
+          this.sensor = res;
+        },
+        (err) => console.error(err)
+      );
+    })
+
   }
-  mandar(){
+  mandar() {
     console.log(this.dataEntrante);
   }
 
-  
 
-  showModal(){
-    if(this.FormularioRegistro.valid){
+
+  showModal() {
+    if (this.FormularioRegistro.valid) {
       Swal({
         title: "Sensor Registrado Con Exito",
         icon: "success",
       });
     }
-    else{
-     Swal({
-       title:'Ocurrio un ERROR al intentar registrar el sensor',
-       icon:"warning"
-     })
+    else {
+      Swal({
+        title: 'Ocurrio un ERROR al intentar registrar el sensor',
+        icon: "warning"
+      })
     }
 
 
   }
-  crearSensor(){
-    this.sensorservi.crearSensor(this.sensor).subscribe((data:any)=>{
-      this.sensor=data
-    })
+
+  ngOnInit(): void {
   }
-     ngOnInit(): void {
-}
 
 }

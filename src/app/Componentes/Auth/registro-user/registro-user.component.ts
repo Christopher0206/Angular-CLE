@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl,FormGroup,Validators } from '@angular/forms';
-import { ServiceService } from '../../../service.service'
-import { Registro} from '../../../models/registro'
+import { FormBuilder, FormControl,FormGroup,Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
+import { errorMessage, timeMessage } from 'src/app/funciones/alertas';
+import { User } from 'src/app/models/user';
+import { AuthService } from 'src/app/servicio/auth/auth.service';
 
 @Component({
   selector: 'app-registro-user',
@@ -9,28 +12,94 @@ import { Registro} from '../../../models/registro'
   styleUrls: ['./registro-user.component.css']
 })
 export class RegistroUserComponent implements OnInit {
-
-  usuario:Registro={
-    "email":'',
-    "password":''
+  registroForm!: FormGroup;
+  user!: User;
+  constructor(
+    private fb: FormBuilder,
+    private authService: AuthService,
+    private router: Router,
+    private cookieService: CookieService
+  ) {
+    this.createFrom();
   }
 
-  constructor(private servicio:ServiceService) { }
-
-  ngOnInit(): void {
+  ngOnInit(): void {}
+  registro(): void {
+    if (this.registroForm.invalid) {
+      return Object.values(this.registroForm.controls).forEach((control) => {
+        control.markAllAsTouched();
+      });
+    } else {
+      this.setUser();
+      console.log(this.setUser());
+      this.authService.registro(this.user).subscribe(
+        (data: any) => {
+          timeMessage('Registrado', 1500);
+          console.log(this.user);
+          this.router.navigate(['/login']);
+        },
+        (_error) => {
+          errorMessage('Ha ocurrido un error.');
+          console.log(this.user);
+        }
+      );
+    }
+  }
+  registros(): void {
+    if (this.registroForm.invalid) {
+      return Object.values(this.registroForm.controls).forEach((control) => {
+        control.markAllAsTouched();
+      });
+    } else {
+      this.setUser();
+      console.log(this.setUser());
+      this.authService.registro(this.user).subscribe(
+        (data: any) => {
+          timeMessage('Registrado', 1500);
+          console.log(this.user);
+          //this.router.navigate(['/login']);
+        },
+        (_error) => {
+          errorMessage('Ha ocurrido un error.');
+          console.log(this.user);
+        }
+      );
+    }
+  }
+  createFrom(): void {
+    this.registroForm = this.fb.group({
+      email:['',[Validators.required,Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,3}$')]],
+      password:['',[Validators.required]],
+      password2:['',[Validators.required]],
+      username:[''],
+    });
   }
 
-  formularioregistro=new FormGroup({
-    email:new FormControl(null,[Validators.required, Validators.email]),
-    password:new FormControl(null,[Validators.required])
-  })
-
-  registrar() {
-    this.servicio.registratse(this.usuario).subscribe((data:any)=>{
-     this.usuario=data;
-    })
+  get emailValidate() {
+    return (
+      this.registroForm.get('email')?.invalid &&
+      this.registroForm.get('email')?.touched
+    );
+  }
+  get passwordValidate() {
+    return (
+      this.registroForm.get('password')?.invalid &&
+      this.registroForm.get('password')?.touched
+    );
+  }
+  get password2Validate() {
+    const pass = this.registroForm.get('password')?.value;
+    const pass2 = this.registroForm.get('password2')?.value;
+    return pass === pass2 ? false : true;
   }
 
-
-
+  setUser(): void {
+    this.user = {
+      id:null,
+      email: this.registroForm.get('email')?.value,
+      password: this.registroForm.get('password')?.value,
+      password2: this.registroForm.get('password_confirmation')?.value,
+      username:this.registroForm.get('username')?.value,
+    };
+  }
 }

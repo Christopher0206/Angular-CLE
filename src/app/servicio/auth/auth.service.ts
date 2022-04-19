@@ -12,14 +12,14 @@ export class AuthService {
   apiURL=environment.apiURL;
   constructor(private http:HttpClient) { }
   gettoken(){
-    return this.http.get<any>(`${this.apiURL}token`);
+    return this.http.get<any>(`${this.apiURL}srevisarToken`);
   }
   registro(user:User):Observable<any>{
-    return this.http.post(`${this.apiURL}register`,user);
+    return this.http.post(`${this.apiURL}Register`,user);
   }
 
   login(user:LUser):Observable<any>{
-    return this.http.post(`${this.apiURL}login`,user);
+    return this.http.post(`${this.apiURL}Login`,user);
   }
 
   //usuarios

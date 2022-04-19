@@ -14,7 +14,7 @@ import { AuthService } from 'src/app/servicio/auth/auth.service';
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup
   user!: LUser;
-  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router, private cookieService: CookieService) {
+  constructor(private fb: FormBuilder, private SERVICIO: AuthService, private router: Router, private cookieService: CookieService) {
     this.createFrom();
     this.login();
   }
@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
     }
     else {
       this.setUser();
-      this.authService.login(this.user).subscribe((data: any) => {
+      this.SERVICIO.login(this.user).subscribe((data: any) => {
         successDialog('Iniciado').then(() => {
           //this.cookieService.set('token_access',data.token,4,'/')
           if (localStorage.getItem("token_access")) {
