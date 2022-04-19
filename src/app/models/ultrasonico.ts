@@ -1,4 +1,4 @@
-export interface Sensor {
+export interface HC_SR04 {
     idH:Number,
     idRU:Number,
     idSensor:Number,

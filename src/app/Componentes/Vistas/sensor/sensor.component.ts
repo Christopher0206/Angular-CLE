@@ -15,7 +15,7 @@ export class SensorComponent implements OnInit {
   @Input() dataEntrante:any;
 
   sensor:Sensor= {
-    "id":'',
+    "idSensor":'',
     "Nombre":'',
     "Descripcion":'',
     "Estado":'',

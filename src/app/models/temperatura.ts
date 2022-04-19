@@ -1,4 +1,4 @@
-export interface Sensor {
+export interface DHT11 {
     idH:Number,
     idRU:Number,
     idSensor:Number,

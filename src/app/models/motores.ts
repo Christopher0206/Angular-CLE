@@ -1,4 +1,4 @@
-export interface Sensor {
+export interface Motores {
     idH:Number,
     idRU:Number,
     idSensor:Number,

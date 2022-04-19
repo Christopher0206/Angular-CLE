@@ -1,4 +1,4 @@
-export interface Sensor {
+export interface KY_031 {
     idH:Number,
     idRU:Number,
     idSensor:Number,

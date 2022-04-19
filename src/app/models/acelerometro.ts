@@ -1,4 +1,4 @@
-export interface Sensor {
+export interface MPU6050 {
     idH:Number,
     idRU:Number,
     idSensor:Number,
