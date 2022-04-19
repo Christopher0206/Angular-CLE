@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterLink, RouterModule } from '@angular/router';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
-import {HttpClientModule} from '@angular/common/http' 
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { DashboardAdminComponent } from './Componentes/Vistas/dashboard-admin/dashboard-admin.component';
@@ -18,6 +17,9 @@ import { SensorComponent } from './Componentes/Vistas/sensor/sensor.component';
 import { DocumentacionComponent } from './Componentes/Vistas/documentacion/documentacion.component';
 import { GraficasComponent } from './Componentes/Vistas/graficas/graficas.component';
 import { HistorialComponent } from './Componentes/Vistas/historial/historial.component';
+import { AuthInterceptorService } from './interceptor/auth-interceptor.service';
+import { CookieService } from 'ngx-cookie-service';
+import { VigilanteGuard } from './guard/vigilante.guard';
 
 
 
@@ -39,17 +41,25 @@ import { HistorialComponent } from './Componentes/Vistas/historial/historial.com
     DocumentacionComponent,
     GraficasComponent,
     HistorialComponent,
- 
-  ],                                                           
+
+  ],
   imports: [
     BrowserModule,
-    RouterModule,
-    ReactiveFormsModule,
     AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule,
     FormsModule,
-    HttpClientModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    CookieService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true,
+    },
+    VigilanteGuard,
+  ],
+
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
