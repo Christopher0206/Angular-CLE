@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { interval } from 'rxjs';
 import { Sensor } from 'src/app/models/sensor';
@@ -12,6 +12,7 @@ import Swal from 'sweetalert';
   styleUrls: ['./sensor.component.css']
 })
 export class SensorComponent implements OnInit {
+  @Input() dataEntrante:any;
 
   sensor:Sensor= {
     "id":'',
@@ -31,8 +32,13 @@ export class SensorComponent implements OnInit {
       this.sensorservi.mostrarSensor().subscribe((data:any)=>{
         this.sensor=data
       })
-    })
+    })  
   }
+  mandar(){
+    console.log(this.dataEntrante);
+  }
+
+  
 
   showModal(){
     if(this.FormularioRegistro.valid){
