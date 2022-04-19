@@ -14,25 +14,25 @@
                       <h4 class="mt-1 mb-5 pb-1">Security Car</h4>
                     </div>
     
-                    <form >
+                    <form (ngSubmit)="onSubmit()" [formGroup]="contactForm">
                       <h5 class="mt-1 mb-5 pb-1" class="text-center"> <p>Iniciar Sesion</p> </h5>
     
                       <div class="form-outline mb-4">
-                        <label class="form-label" for="form2Example11">Correo Electronico</label>
-                        <input formControlName="email" type="email" id="form2Example11" class="form-control" placeholder="Coloca tu correo electronico"/>
+                        <label class="form-label">Correo Electronico</label>
+                        <input type="email" id="form2Example11" class="form-control" placeholder="Coloca tu correo electronico" formControlName="email" required/>
                        
                       </div>
     
                       <div class="form-outline mb-4">
                         <label class="form-label" for="form2Example22">Contraseña</label>
-                        <input formControlName="password" type="password" id="form2Example22" class="form-control" placeholder="Contraseña"/>
+                        <input type="password" id="form2Example22" class="form-control" placeholder="Contraseña" formControlName="password"/>
                        
                       </div>
   
                       <!-- <div class="alert alert-danger text-center" role="alert" ></div> -->
     
                       <div class="text-center pt-1 mb-5 ">
-                        <button class="btn btn-info btn-block fa-lg " type="submit" routerLink="../../Vistas/home">Ingresar</button>
+                        <button class="btn btn-info btn-block fa-lg " type="submit" [disabled]="contactForm" routerLink="../../Vistas/home">Ingresar</button>
                       </div>
     
                       <div class="d-flex align-items-center justify-content-center pb-4">

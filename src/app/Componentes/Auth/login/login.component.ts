@@ -14,11 +14,15 @@ export class LoginComponent implements OnInit {
     //usuario : new FormControl('', Validators.required),
     //password : new FormControl('',Validators.required)
   //}
-
+  contactForm!: FormGroup;
   constructor(private api:ServiceService) { }
 
   ngOnInit(): void {
 
+  }
+
+  onSubmit(){
+    console.log('Form->');
   }
 
   
