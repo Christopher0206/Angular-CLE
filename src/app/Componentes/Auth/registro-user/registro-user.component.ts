@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl,FormGroup,Validators } from '@angular/forms';
-import { ServiceService } from '../../../service.service'
+import { AuthService } from '../../../servicio/auth/auth.service'
 import { Registro} from '../../../models/registro'
 
 @Component({
@@ -15,7 +15,7 @@ export class RegistroUserComponent implements OnInit {
     "password":''
   }
 
-  constructor(private servicio:ServiceService) { }
+  constructor(private servicio:AuthService) { }
 
   ngOnInit(): void {
   }
@@ -26,7 +26,7 @@ export class RegistroUserComponent implements OnInit {
   })
 
   registrar() {
-    this.servicio.registratse(this.usuario).subscribe((data:any)=>{
+    this.servicio.registro(this.usuario).subscribe((data:any)=>{
      this.usuario=data;
     })
   }
