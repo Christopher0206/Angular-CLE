@@ -5,10 +5,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { DashboardAdminComponent } from './Componentes/Vistas/dashboard-admin/dashboard-admin.component';
 import { NavBarComponent } from './Componentes/Vistas/nav-bar/nav-bar.component';
 import { FooterComponent } from './Componentes/Vistas/footer/footer.component';
-import { DashboardComponent } from './Componentes/Vistas/dashboard/dashboard.component';
 import { HomeComponent } from './Componentes/Vistas/home/home.component';
 import { SidebarComponent } from './Componentes/Vistas/sidebar/sidebar.component';
 import { RegistroUserComponent } from './Componentes/Auth/registro-user/registro-user.component';
@@ -29,10 +27,10 @@ import { VigilanteGuard } from './guard/vigilante.guard';
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardAdminComponent,
+    
     NavBarComponent,
     FooterComponent,
-    DashboardComponent,
+    
     HomeComponent,
     SidebarComponent,
     RegistroUserComponent,
