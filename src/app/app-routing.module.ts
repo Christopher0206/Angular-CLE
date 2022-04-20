@@ -8,6 +8,7 @@ import { DocumentacionComponent } from './Componentes/Vistas/documentacion/docum
 import { GraficasComponent } from './Componentes/Vistas/graficas/graficas.component';
 import { SidebarComponent } from './Componentes/Vistas/sidebar/sidebar.component';
 import { HistorialComponent } from './Componentes/Vistas/historial/historial.component';
+import { ControlesComponent } from '../app/Componentes/Vistas/controles/controles.component'
 
 
 
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'graficas', component: GraficasComponent },
   { path: 'historial', component: HistorialComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'control', component: ControlesComponent },
   {
     path: 'ini',
     loadChildren: () =>
