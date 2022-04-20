@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './Componentes/Vistas/nav-bar/nav-bar.component';
 import { FooterComponent } from './Componentes/Vistas/footer/footer.component';
@@ -18,7 +17,7 @@ import { HistorialComponent } from './Componentes/Vistas/historial/historial.com
 import { AuthInterceptorService } from './interceptor/auth-interceptor.service';
 import { CookieService } from 'ngx-cookie-service';
 import { VigilanteGuard } from './guard/vigilante.guard';
-
+import {ControlesComponent} from '../app/Componentes/Vistas/controles/controles.component';
 
 
 
@@ -27,10 +26,8 @@ import { VigilanteGuard } from './guard/vigilante.guard';
 @NgModule({
   declarations: [
     AppComponent,
-    
     NavBarComponent,
     FooterComponent,
-    
     HomeComponent,
     SidebarComponent,
     RegistroUserComponent,
@@ -39,7 +36,7 @@ import { VigilanteGuard } from './guard/vigilante.guard';
     DocumentacionComponent,
     GraficasComponent,
     HistorialComponent,
-
+    ControlesComponent,
   ],
   imports: [
     BrowserModule,
