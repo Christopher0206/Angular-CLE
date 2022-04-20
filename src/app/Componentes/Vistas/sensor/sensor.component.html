@@ -7,30 +7,29 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 <div class="container">
-  <div class="row" id="ads">
+  <div class="row" id="ads" *ngFor="let sen1 of sensores">
     <div class="col-md-4">
       <div class="card rounded">
         <div class="card-image">
-          <span class="card-notify-badge">Sensor 1</span>
+          <span class="card-notify-badge">Sensor {{sen1.idSensor}}</span>
 
           <img
             class="img-fluid"
-            src="https://i.linio.com/p/6c6d698fe6cd854ff27c3b43b5c6f61d-product.jpg"
+            src={{sen1.IMG}}
             alt="Alternate Text"
           />
         </div>
 
         <div class="card-body text-center">
           <div class="ad-title m-auto">
-            <h5>Humedad y Temperatura</h5>
-            <ul >
-             
-            </ul>
+            <h5>{{sen1.Nombre}}</h5>
+            <h2>{{sen1.Descripcion}}</h2>
           </div>
           <a class="ad-btn" href="#">Agregar</a>
         </div>
       </div>
     </div>
+    
     <div class="col-md-4">
       <div class="card rounded">
         <div class="card-image">
