@@ -15,9 +15,9 @@ import { DocumentacionComponent } from './Componentes/Vistas/documentacion/docum
 import { GraficasComponent } from './Componentes/Vistas/graficas/graficas.component';
 import { HistorialComponent } from './Componentes/Vistas/historial/historial.component';
 import { AuthInterceptorService } from './interceptor/auth-interceptor.service';
-import { CookieService } from 'ngx-cookie-service';
-import { VigilanteGuard } from './guard/vigilante.guard';
+
 import {ControlesComponent} from '../app/Componentes/Vistas/controles/controles.component';
+import { SensorService } from './servicio/sensores/sensores.service';
 
 
 
@@ -45,16 +45,7 @@ import {ControlesComponent} from '../app/Componentes/Vistas/controles/controles.
     HttpClientModule,
     FormsModule,
   ],
-  providers: [
-    CookieService,
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: AuthInterceptorService,
-      multi: true,
-    },
-    VigilanteGuard,
-  ],
-
+  providers: [SensorService],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
