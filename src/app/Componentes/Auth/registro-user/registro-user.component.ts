@@ -11,7 +11,7 @@ import { AuthService } from 'src/app/servicio/auth/auth.service';
   templateUrl: './registro-user.component.html',
   styleUrls: ['./registro-user.component.css']
 })
-export class RegistroUserComponent implements OnInit {
+export class RegisterComponent implements OnInit {
   registroForm!: FormGroup;
   user!: User;
   constructor(
@@ -60,7 +60,7 @@ export class RegistroUserComponent implements OnInit {
           //this.router.navigate(['/login']);
         },
         (_error) => {
-          errorMessage('Ha ocurrido un error.');
+          errorMessage('Ha ocurrido un error:\n'+_error);
           console.log(this.user);
         }
       );
@@ -97,6 +97,7 @@ export class RegistroUserComponent implements OnInit {
     this.user = {
       id:null,
       email: this.registroForm.get('email')?.value,
+      tipo_usuario: 1,
       password: this.registroForm.get('password')?.value,
       password2: this.registroForm.get('password_confirmation')?.value,
       username:this.registroForm.get('username')?.value,

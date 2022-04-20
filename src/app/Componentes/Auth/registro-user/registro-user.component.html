@@ -2,57 +2,43 @@
   <div class="row card-body mx-md-2">
     <div class="col">
       <form [formGroup]="registroForm" (ngSubmit)="registro()">
-        <div class="form-outline mb-4">
-          <label class="form-label" for="inputUsername"
-            >Nombre de Usuario</label
-          >
-          <input
-            formControlName="username"
-            type="text"
-            id="inputUsername"
-            placeholder="Username"
-            formControlName="username"
-            class="form-control"
-            placeholder="Nombre De Usuario"
-          />
-        </div>
-        <div class="form-outline mb-4">
-          <label class="form-label" for="email">Correo Electronico</label>
-          <input
-            type="email"
-            id="inputEmail"
-            formControlName="email"
-            [class.is-invalid]="emailValidate"
-            class="form-control"
-            placeholder="Coloca tu correo electronico"
-          />
-        </div>
-        <div class="form-outline mb-4">
-          <label class="form-label" for="password">Contraseña</label>
-          <input
-            type="password"
-            id="inputPassword"
-            formControlName="password"
-            [class.is-invalid]="passwordValidate"
-            class="form-control"
-            placeholder="Contraseña"
-          />
-        </div>
-        <div class="form-outline mb-4">
-          <label class="form-label" for="password2">Confirmar Contraseña</label>
-          <input
-            type="password"
-            id="inputPassword2"
-            formControlName="password2"
-            [class.is-invalid]="password2Validate"
-            class="form-control"
-            placeholder="Confirmar Contraseña"
-          />
-        </div>
-
+        <label class="sr-only" for="inputUsername">Username</label>
+        <input
+          type="text"
+          class="form-control mb-2"
+          id="inputUsername"
+          placeholder="Username"
+          formControlName="username"
+        />
+        <label class="sr-only" for="inputEmail">Email Address</label>
+        <input
+          type="email"
+          class="form-control mb-2"
+          id="inputEmail"
+          placeholder="Email Address"
+          formControlName="email"
+          [class.is-invalid]="emailValidate"
+        />
+        <label class="sr-only" for="inputPassword">Password</label>
+        <input
+          type="password"
+          class="form-control mb-3"
+          id="inputPassword"
+          placeholder="Password"
+          formControlName="password"
+          [class.is-invalid]="passwordValidate"
+        />
+        <label class="sr-only" for="inputPassword2">Confirm Password</label>
+        <input
+          type="password"
+          class="form-control mb-3"
+          id="inputPassword2"
+          placeholder="Confirm Password"
+          formControlName="password2"
+          [class.is-invalid]="password2Validate"
+        />
         <div class="text-center pt-1 mb-5 pb-1">
           <button
-            routerLink="/login"
             class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
             type="submit"
           >
@@ -68,9 +54,17 @@
           style="width: 185px"
           alt="logo"
         />
-        <h4 class="mt-1 mb-5 pb-1">Registrar Usuario</h4>
+        <h4 class="mt-1 mb-5 pb-1">REGISTRAR</h4>
+        <br />
+        <a
+          style="
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+              sans-serif;
+            font-size: 23px;
+          "
+          >Ya tienes una cuenta?</a
+        >
       </div>
     </div>
   </div>
 </div>
-<br /><br /><br /><br /><br />

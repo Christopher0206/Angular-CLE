@@ -8,7 +8,7 @@ import { NavBarComponent } from './Componentes/Vistas/nav-bar/nav-bar.component'
 import { FooterComponent } from './Componentes/Vistas/footer/footer.component';
 import { HomeComponent } from './Componentes/Vistas/home/home.component';
 import { SidebarComponent } from './Componentes/Vistas/sidebar/sidebar.component';
-import { RegistroUserComponent } from './Componentes/Auth/registro-user/registro-user.component';
+import { RegisterComponent } from './Componentes/Auth/registro-user/registro-user.component';
 import { LoginComponent } from './Componentes/Auth/login/login.component';
 import { SensorComponent } from './Componentes/Vistas/sensor/sensor.component';
 import { DocumentacionComponent } from './Componentes/Vistas/documentacion/documentacion.component';
@@ -30,7 +30,7 @@ import {ControlesComponent} from '../app/Componentes/Vistas/controles/controles.
     FooterComponent,
     HomeComponent,
     SidebarComponent,
-    RegistroUserComponent,
+    RegisterComponent,
     LoginComponent,
     SensorComponent,
     DocumentacionComponent,
