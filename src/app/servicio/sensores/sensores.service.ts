@@ -12,7 +12,7 @@ export class SensorService {
   }
   
   
-  public async mostrarSensor(){
+   mostrarSensor(){
     const token=localStorage.getItem("token")
 
 
