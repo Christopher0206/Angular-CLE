@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
       this.setUser();
       this.SERVICIO.login(this.user).subscribe((data: any) => {
         successDialog('Iniciado').then(() => {
-          //this.cookieService.set('token_access',data.token,4,'/')
+          
           if (localStorage.getItem("token_access")) {
             localStorage.removeItem("token_access")
             console.log("Si hay token y lo elimine")
@@ -39,9 +39,9 @@ export class LoginComponent implements OnInit {
           localStorage.setItem("token_access", data.token)
           localStorage.setItem("usuario", this.loginForm.get('email')?.value)
           console.log("AQUI SETEO TOKEN   " + data.token)
-          this.router.navigate(['ini/inicio']);
+          //this.router.navigate(['ini/inicio']);
         })
-      }, error => {
+      }, (error) => {
         errorMessage('Usuario o contraseña incorrectas');
       })
     }

@@ -27,10 +27,8 @@ import { VigilanteGuard } from './guard/vigilante.guard';
 @NgModule({
   declarations: [
     AppComponent,
-    
     NavBarComponent,
     FooterComponent,
-    
     HomeComponent,
     SidebarComponent,
     RegistroUserComponent,
