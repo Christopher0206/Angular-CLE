@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -18,6 +19,7 @@ import { AuthInterceptorService } from './interceptor/auth-interceptor.service';
 
 import {ControlesComponent} from '../app/Componentes/Vistas/controles/controles.component';
 import { SensorService } from './servicio/sensores/sensores.service';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 
 
@@ -40,10 +42,12 @@ import { SensorService } from './servicio/sensores/sensores.service';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
+    NgxChartsModule
   ],
   providers: [SensorService],
   bootstrap: [AppComponent],
