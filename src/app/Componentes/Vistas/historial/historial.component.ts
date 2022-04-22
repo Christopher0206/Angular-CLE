@@ -9,15 +9,20 @@ import { SensorService } from 'src/app/servicio/sensores/sensores.service';
 })
 export class HistorialComponent implements OnInit {
 
-  
+ 
+  historial: any
  
 
 
-  constructor( ) {
+  constructor( private histo:SensorService) {
 
    
-  
-  }
+     this.histo.mostrarHistorial().subscribe((data:any)=>{
+       this.historial=data
+     })
+
+   }
+   
 
 
 

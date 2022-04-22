@@ -19,8 +19,18 @@ export class SensorService {
     const tokenHeader=new HttpHeaders({
       'Authorization':'Bearer '+ token
     })
-    return this.http.get('http://143.244.174.46:3333/mostrarSensores',{headers:tokenHeader})
+    return this.http.get('http://143.244.174.46:45953/mostrarSensores',{headers:tokenHeader})
   }
   
+
+  mostrarHistorial(){
+    const token=localStorage.getItem("token")
+
+
+    const tokenHeader=new HttpHeaders({
+      'Authorization':'Bearer '+ token
+    })
+    return this.http.get('http://143.244.174.46:45953/mostrarHistorial',{headers:tokenHeader})
+  }
 
 }
