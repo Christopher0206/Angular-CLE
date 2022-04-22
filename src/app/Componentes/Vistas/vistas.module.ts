@@ -10,6 +10,7 @@ import { GraficasComponent } from './graficas/graficas.component';
 import { HistorialComponent } from './historial/historial.component';
 import { ControlesComponent } from './controles/controles.component';
 import { VistasRoutingModule } from './vistas-routing.module';
+import { ESTADOS } from './sidebar/estado.module';
 
 @NgModule({
   declarations: [
@@ -19,11 +20,13 @@ import { VistasRoutingModule } from './vistas-routing.module';
     //GraficasComponent,
     HistorialComponent,
     ControlesComponent,
+    
   ],
   imports: [
     CommonModule,
     HttpClientModule,
     FormsModule,
+    ESTADOS,
     ReactiveFormsModule,
     VistasRoutingModule
   ],

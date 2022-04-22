@@ -44,20 +44,25 @@ export class VigilanteGuard implements CanActivate {
     //const cookie=this.cookieService.check('token_access');
     //this.redirect(cookie);
     //return cookie;
-    this.service.gettoken().subscribe(
-      (res) => {
-        (this.resp = true), console.log(res);
-        //this.router.navigate(["ini/control"])
-      },
-      (err) => {
-        (this.resp = false),
-          this.router.navigate(['/login']),
-          localStorage.removeItem('token_access');
-        localStorage.removeItem('id');
-        console.error(err);
-      }
-    );
-    this.resp = true;
+    if(localStorage.getItem('token_access')=="")
+    {
+      this.resp = false;
+    }
+    else{
+      this.service.gettoken().subscribe(
+        (res) => {
+          (this.resp = true), console.log(res);
+          //this.router.navigate(["ini/control"])
+        },
+        (err) => {
+          (this.resp = false),
+            this.router.navigate(['/login']),
+            localStorage.removeItem('token_access');
+          localStorage.removeItem('id');
+          console.error(err);
+        }
+      );
+    }
     return this.resp;
   }
 }
