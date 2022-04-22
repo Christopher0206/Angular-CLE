@@ -35,6 +35,7 @@ export class SidebarComponent implements OnInit {
     }
     else {
       this.usuario = localStorage.getItem('usuario');
+      this.estado+=1;
     }
   }
   ngOnInit(): void {

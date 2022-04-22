@@ -21,7 +21,7 @@
         </div>
       </div>
 
-      <div >
+      <div *ngIf="estado!=1">
         <div class="d-grid gap-2 mt-4">
           <button class="btn btn-outline-dark" type="button" routerLink="../login" (click)="cerrarsesion()">Cerrar Sesion</button>
         </div>
