@@ -11,12 +11,34 @@ export class ControlesComponent implements OnInit {
 
   ngOnInit(): void {
   }
+//BLOQUEAR BOTON
+  isValid($event: MouseEvent){
+    ($event.target as HTMLButtonElement).disabled = true;
 
-  avanzar(){}
-  retroceder(){}
-  detener(){}
-  izquierda(){}
-  derecha(){}
-  centrar(){}
+  }
+//AVANZA EL CARRO
+  avanzar($event: MouseEvent){
+    ($event.target as HTMLButtonElement).disabled = true;
+  }
+//RETROCEDE EL CARRO
+  retroceder(){
+
+  }
+//DETIENE EL CARRO AUTOMATICAMENTE
+  detener(){
+
+  }
+//MUEVE A LA IZQUIERDA
+  izquierda(){
+
+  }
+//MUEVE A LA DERECHA
+  derecha(){
+
+  }
+//SE CENTRAN LAS LLANTAS
+  centrar(){
+
+  }
 
 }
