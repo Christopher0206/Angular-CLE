@@ -17,9 +17,11 @@ import { GraficasComponent } from './Componentes/Vistas/graficas/graficas.compon
 import { HistorialComponent } from './Componentes/Vistas/historial/historial.component';
 import { AuthInterceptorService } from './interceptor/auth-interceptor.service';
 
-import {ControlesComponent} from '../app/Componentes/Vistas/controles/controles.component';
+import { ControlesComponent } from '../app/Componentes/Vistas/controles/controles.component';
 import { SensorService } from './servicio/sensores/sensores.service';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { VigilanteGuard } from './guard/vigilante.guard';
+import { CookieService } from 'ngx-cookie-service';
 
 
 
@@ -28,17 +30,11 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 @NgModule({
   declarations: [
     AppComponent,
-    NavBarComponent,
-    FooterComponent,
-    HomeComponent,
-    SidebarComponent,
     RegisterComponent,
     LoginComponent,
-    SensorComponent,
-    DocumentacionComponent,
-    GraficasComponent,
-    HistorialComponent,
-    ControlesComponent,
+    NavBarComponent,
+    FooterComponent,
+    SidebarComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,7 +45,17 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
     FormsModule,
     NgxChartsModule
   ],
-  providers: [SensorService],
+  providers: [
+    CookieService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true,
+    },
+    VigilanteGuard,
+    SensorService
+  ],
   bootstrap: [AppComponent],
+
 })
 export class AppModule { }

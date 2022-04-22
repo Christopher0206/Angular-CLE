@@ -47,7 +47,7 @@ export class VigilanteGuard implements CanActivate {
     this.service.gettoken().subscribe(
       (res) => {
         (this.resp = true), console.log(res);
-        //this.router.navigate(["/ini/inicio"])
+        //this.router.navigate(["ini/control"])
       },
       (err) => {
         (this.resp = false),

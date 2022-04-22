@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/servicio/auth/auth.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,9 +9,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, private authService: AuthService) { }
+  estado = 0;
+  usuario: any;
+  listarUsuarios() {
+    return this.estado;
+  }
 
+  cerrarsesion() {
+    localStorage.removeItem('token_access');
+    localStorage.removeItem('id');
+    localStorage.removeItem('usuario');
+    this.router.navigate(['/login']);
+    window.location.hash = 'no-back-button';
+    window.location.hash = 'Again-No-back-button'; //chrome
+    window.onhashchange = function () {
+      window.location.hash = 'no-back-button';
+    };
+    //this.buscar()
+  }
+  buscar() {
+    let s = localStorage.getItem('usuario');
+    if (localStorage.getItem('usuario') == "") {
+      this.usuario = "no hay"
+    }
+    else {
+      this.usuario = localStorage.getItem('usuario');
+    }
+  }
   ngOnInit(): void {
+    this.buscar()
   }
 
 }

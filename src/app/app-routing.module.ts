@@ -14,17 +14,10 @@ import { ControlesComponent } from '../app/Componentes/Vistas/controles/controle
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
-  //{ path: 'sidebar', component: SidebarComponent },
-  { path: 'sensores', component: SensorComponent },
-  { path: 'documentacion', component: DocumentacionComponent },
   { path: 'registro-user', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'graficas', component: GraficasComponent },
-  { path: 'historial', component: HistorialComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'control', component: ControlesComponent },
+  //{ path: 'sidebar', component: SidebarComponent },
+  
   {
     path: 'ini',
     loadChildren: () =>
