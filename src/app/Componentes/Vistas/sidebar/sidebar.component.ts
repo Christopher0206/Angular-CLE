@@ -17,6 +17,7 @@ export class SidebarComponent implements OnInit {
   }
 
   cerrarsesion() {
+    this.estado-=1;
     localStorage.removeItem('token_access');
     localStorage.removeItem('id');
     localStorage.removeItem('usuario');
