@@ -8,9 +8,9 @@
 
 
 
-<div class="container">
-  <div class="row" id="ads" *ngFor="let sen1 of sensores">
-    <div class="col-md-4">
+<div class="container-fluid">
+  <div class="row" id="ads">
+    <div class="col col-md-4" *ngFor="let sen1 of sensores" style="height: 800px;">
       <div class="card rounded">
         <div class="card-image">
           <span class="card-notify-badge">Sensor {{sen1.idSensor}}</span>
