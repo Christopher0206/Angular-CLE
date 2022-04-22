@@ -7,9 +7,14 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngSwitch="let histo of historial">
-       
-        </tr>
+        <span  [ngSwitch]="historial['idSensor']">
+          <span *ngSwitchCase>{{1}}</span>
+          <span *ngSwitchCase>{{2}}</span>
+          <span *ngSwitchCase>{{3}}</span>
+          <span *ngSwitchCase>{{4}}</span>
+          <span *ngSwitchCase>{{5}}</span>
+          <span *ngSwitchCase>{{6}}</span>
+        </span >
       </tbody>
     </table>
   </div>

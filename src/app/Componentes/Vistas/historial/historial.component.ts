@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MPU6050 } from 'src/app/models/acelerometro';
 import { SensorService } from 'src/app/servicio/sensores/sensores.service';
 
 @Component({
