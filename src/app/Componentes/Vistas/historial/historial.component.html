@@ -1,0 +1,34 @@
+<link
+  href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+  rel="stylesheet"
+  id="bootstrap-css"
+/>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+
+<div class="container-fluid">
+  <div class="row" id="ads">
+    <div class="col col-md-4" *ngFor="let senso of acele" style="height: 800px;">
+      <div class="card rounded">
+        <div class="card-image">
+          <span class="card-notify-badge">Sensor {{senso.idSensor}}</span>
+          <div class="card-body text-center">
+          <div class="ad-title m-auto">
+              <ul>
+            <h5> Acelerometro</h5>
+            <li>{{senso. acel_x}}</li>
+            <li>{{senso. acel_y}}</li>
+            <li>{{senso.  acel_z}}</li>
+            <li>{{senso.  ang_x}}</li>
+            <li>{{senso.  ang_y}}</li>
+            <li>{{senso.  ang_z}}</li>
+        </ul>
+          </div>
+          <a class="ad-btn">Agregar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

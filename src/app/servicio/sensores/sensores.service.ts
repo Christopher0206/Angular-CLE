@@ -21,4 +21,13 @@ export class SensorService {
     })
     return this.http.get('http://143.244.174.46:3333/mostrarSensores',{headers:tokenHeader})
   }
+  mostrarAcele(){
+    const token=localStorage.getItem("token")
+
+
+    const tokenHeader=new HttpHeaders({
+      'Authorization':'Bearer '+ token
+    })
+    return this.http.get('http://143.244.174.46:3333/',{headers:tokenHeader})
+  }
 }
