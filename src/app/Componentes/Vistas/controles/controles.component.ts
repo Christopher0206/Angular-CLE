@@ -12,4 +12,11 @@ export class ControlesComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  avanzar(){}
+  retroceder(){}
+  detener(){}
+  izquierda(){}
+  derecha(){}
+  centrar(){}
+
 }
