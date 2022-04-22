@@ -10,13 +10,13 @@
 
 <div class="container-fluid">
   <div class="row" id="ads">
-    <div class="col col-md-4" *ngFor="let sen1 of sensores" style="height: 800px;">
+    <div class="col col-md-4" *ngFor="let sen1 of sensores" >
       <div class="card rounded">
         <div class="card-image">
           <span class="card-notify-badge">Sensor {{sen1.idSensor}}</span>
 
           <img
-            class="img-fluid"
+            class="img-fluid imagenes"
             src={{sen1.IMG}}
             alt="Alternate Text"
           />

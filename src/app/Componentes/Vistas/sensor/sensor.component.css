@@ -99,7 +99,13 @@
         font-size: 18px;
         gap: 10px; 
     }
-
+.imagenes
+{
+    display: flex;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
 
   
    
