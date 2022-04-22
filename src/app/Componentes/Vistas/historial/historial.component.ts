@@ -9,19 +9,15 @@ import { SensorService } from 'src/app/servicio/sensores/sensores.service';
 })
 export class HistorialComponent implements OnInit {
 
-  acele: MPU6050[]|undefined
+  
  
 
 
-  constructor( private mostrar:SensorService) {
+  constructor( ) {
 
    
-     this.mostrar.mostrarAcele().subscribe((data:any)=>{
-       this.acele=data
-     })
-
-   }
-   
+  
+  }
 
 
 
