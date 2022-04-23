@@ -1,11 +1,10 @@
 <div class="container-sm container-fluid">
   <div class="row">
-    <div class="col col-md-3" *ngFor="let sen1 of sensores" row >
+    <div class="col col-md-3" *ngFor="let sen1 of sensores" row>
       <div class="card rounded">
         <div class="card-image">
           <span class="card-notify-badge">Sensor {{ sen1.idSensor }}</span>
         </div>
-
         <div class="card-body text-center">
           <div class="ad-title m-auto">
             <h5>{{ sen1.Nombre }}</h5>
@@ -18,9 +17,7 @@
   <div class="row">
     <div class="col"></div>
     <div class="col">
-
       <div class="caja_botones">
-        
         <!--BOTON DE ACELERAR disabled="!isValid"-->
         <button type="button" (click)="ir()">
           <img

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Motores } from 'src/app/models/motores';
 import { Sensor } from 'src/app/models/sensor';
 import { User } from 'src/app/models/user';
 import { AuthService } from 'src/app/servicio/auth/auth.service';
@@ -12,6 +13,7 @@ import { SensorService } from 'src/app/servicio/sensores/sensores.service';
 export class ControlesComponent implements OnInit {
   sensores: Sensor[] | undefined
   sid = 0
+  motor!: Motores;
   constructor(private sensorS: SensorService, private usuario: AuthService) {
 
     this.sensorS.mostrarSensor().subscribe((data: any) => {
@@ -28,7 +30,13 @@ export class ControlesComponent implements OnInit {
   }
   //pruebas botones issac
   ir() {
-    
+    this.motor = {
+      email: this.registroForm.get('email')?.value,
+      tipo_usuario: 1,
+      password: this.registroForm.get('password')?.value,
+      password2: this.registroForm.get('password_confirmation')?.value,
+      username:this.registroForm.get('username')?.value,
+    };
     console.log("avanzar")
   }
   retroceder(){
