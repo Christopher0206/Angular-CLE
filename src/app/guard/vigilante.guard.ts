@@ -72,9 +72,6 @@ export class VigilanteGuard implements CanActivate {
       this.sensor.historialbyuser(environment.IDUSUARIO).subscribe(
         (res) => {
           //localStorage.setItem('id',res)
-          res.forEach((element: any) => {
-            return environment.USUARIOHISTORIAL.push(element);
-          });
           console.log("global:\t"+environment.USUARIOHISTORIAL)
         },
         (err) => {
