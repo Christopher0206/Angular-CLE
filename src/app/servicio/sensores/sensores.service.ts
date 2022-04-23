@@ -24,14 +24,12 @@ export class SensorService {
     return this.http.get(`${this.apiURL}smostrarSensoress`,{headers:tokenHeader})
   }
   
-  historialbyuser(){
+  historialbyuser(id:any){
     const token=localStorage.getItem("token")
-
-
     const tokenHeader=new HttpHeaders({
       'Authorization':'Bearer '+ token   //sfiltroultimoregistro
     })
-    return this.http.get(`${this.apiURL}historialbyuser`,{headers:tokenHeader})
+    return this.http.get(`${this.apiURL}historialbyuser/`+id)
   }
 
 
@@ -50,6 +48,14 @@ export class SensorService {
       'Authorization':'Bearer '+ token
     })
     return this.http.post(`${this.apiURL}sinsertarMotores`, body,{headers:tokenHeader});
+  }
+  //misSensores
+  misSensores(iduser:number){
+    const token=localStorage.getItem("token")
+    const tokenHeader=new HttpHeaders({
+      'Authorization':'Bearer '+ token
+    })
+    return this.http.get(`${this.apiURL}misSensores`+"/"+iduser)
   }
 }
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { hMotores } from 'src/app/models/hmotores';
 import { Motores } from 'src/app/models/motores';
 import { Sensor } from 'src/app/models/sensor';
 import { User } from 'src/app/models/user';
@@ -13,45 +14,67 @@ import { SensorService } from 'src/app/servicio/sensores/sensores.service';
 export class ControlesComponent implements OnInit {
   sensores: Sensor[] | undefined
   sid = 0
-  motor!: Motores;
+  motor!: hMotores;
   constructor(private sensorS: SensorService, private usuario: AuthService) {
-
-    this.sensorS.mostrarSensor().subscribe((data: any) => {
-      this.sensores = data
-    })
     this.usuario.ididusuario().subscribe((data: any) => {
       this.sid = data
       //console.log(this.sid)
     })
-
+    console.log("idusuario:"+this.sid)
+    this.sensorS.misSensores(Number(1)).subscribe((data: any) => {
+      this.sensores = data
+    })
   }
   ngOnInit(): void {
 
   }
   //pruebas botones issac
   ir() {
-    this.motor = {
-      email: this.registroForm.get('email')?.value,
-      tipo_usuario: 1,
-      password: this.registroForm.get('password')?.value,
-      password2: this.registroForm.get('password_confirmation')?.value,
-      username:this.registroForm.get('username')?.value,
+    this.motor = {  
+    idRU:1,
+    idSensor:5,
+    Posicion:"avanzar"
     };
     console.log("avanzar")
   }
   retroceder(){
+    this.motor = {  
+      idRU:1,
+      idSensor:5,
+      Posicion:"retroceder"
+      };
     console.log("retroceder")
   }
   stop() {
+    this.motor = {  
+      idRU:1,
+      idSensor:5,
+      Posicion:"stop"
+      };
     console.log("stop")
   }
   IZQ() {
+    this.motor = {  
+      idRU:1,
+      idSensor:6,
+      Posicion:"IZQ"
+      };
     console.log("IZQ")
   }
   CENTRO() {
+    this.motor = {  
+      idRU:1,
+      idSensor:6,
+      Posicion:"CENTRO"
+      };
     console.log("CENTRO")
   }
   DER() {
+    this.motor = {  
+      idRU:1,
+      idSensor:6,
+      Posicion:"DER"
+      };
     console.log("DER")
   }
   /*
