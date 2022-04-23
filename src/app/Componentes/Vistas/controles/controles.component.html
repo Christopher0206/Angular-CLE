@@ -1,6 +1,6 @@
 <div class="container-sm container-fluid">
-  <div class="row"> 
-    <div class="col col-md-3" *ngFor="let sen1 of sensores">
+  <div class="row">
+    <div class="col col-md-3" *ngFor="let sen1 of sensores" row >
       <div class="card rounded">
         <div class="card-image">
           <span class="card-notify-badge">Sensor {{ sen1.idSensor }}</span>
@@ -14,38 +14,61 @@
       </div>
     </div>
   </div>
-  <br>
-  <div class="col">
-    <div class="container">
-      <!--BOTON DE ACELERAR-->
-      <button type="button" disabled="!isValid" (click)="avanzar($event)">
-        <img src="../../../../assets/img/freno.jpeg" height="80" width="100" />
-      </button>
-      <!--BOTON DE FRENAR-->
-      <button type="button" >
-        <img
-          src="../../../../assets/img/acelerador.jpeg"
-          height="80"
-          width="100"
-        />
-      </button>
-      <!--BOTON DE LA IZQUIERDA-->
-      <button type="button">
-        <img
-          src="../../../../assets/img/izquierda.jpeg"
-          height="80"
-          width="100"
-        />
-      </button>
-      <!--BOTON DE LA DERECHA-->
-      <button type="button">
-        <img
-          src="../../../../assets/img/derecha.jpeg"
-          height="80"
-          width="100"
-        />
-      </button>
+  <br />
+  <div class="row">
+    <div class="col"></div>
+    <div class="col">
+
+      <div class="caja_botones">
+        
+        <!--BOTON DE ACELERAR disabled="!isValid"-->
+        <button type="button" (click)="ir()">
+          <img
+            src="../../../../assets/img/acelerador.jpeg"
+            height="80"
+            width="100"
+          />
+        </button>
+        <!--BOTON DE FRENAR-->
+        <button type="button" (click)="stop()">
+          <img src="../../../../assets/img/freno.png" height="80" width="100" />
+        </button>
+        <!--BOTON DE reversa  disabled="!isValid"-->
+        <button type="button" (click)="retroceder()">
+          <img
+            src="../../../../assets/img/rebersa.jpeg"
+            height="80"
+            width="100"
+          />
+        </button>
+      </div>
+      <div class="caja_botones">
+        <!--BOTON DE LA IZQUIERDA-->
+        <button type="button" (click)="IZQ()">
+          <img
+            src="../../../../assets/img/izquierda.jpeg"
+            height="80"
+            width="100"
+          />
+        </button>
+        <!--BOTON CENTRAR-->
+        <button type="button" class="centro" (click)="CENTRO()">
+          <img
+            src="../../../../assets/img/izquierda.jpeg"
+            height="80"
+            width="100"
+          />
+        </button>
+        <!--BOTON DE LA DERECHA-->
+        <button type="button" (click)="DER()">
+          <img
+            src="../../../../assets/img/derecha.jpeg"
+            height="80"
+            width="100"
+          />
+        </button>
+      </div>
     </div>
-    <div class=""></div>
+    <div class="col"></div>
   </div>
 </div>
