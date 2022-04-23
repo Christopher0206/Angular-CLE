@@ -11,6 +11,7 @@ import { LUser } from 'src/app/models/loginuser';
 export class AuthService {
   [x: string]: any;
   apiURL = environment.apiURL;
+  idusuario!: any;
   constructor(private http: HttpClient) { }
   gettoken() {
     const token = localStorage.getItem("token")
@@ -38,13 +39,13 @@ export class AuthService {
     })
     return this.http.get<User[]>(`${this.apiURL}straerUsuario`, { headers: tokenHeader });
   }
-  idusuario() {
+  ididusuario() {
     //straerUsuario   idusuario
     const token = localStorage.getItem("token")
     const tokenHeader = new HttpHeaders({
       'Authorization': 'Bearer ' + token
     })
-    return this.http.get<User[]>(`${this.apiURL}idusuario`, { headers: tokenHeader });
+    return this.http.get(`${this.apiURL}idusuario`, { headers: tokenHeader });
   }
   getUsuarios() {
     return this.http.get<User[]>(`${this.apiURL}usuario`);

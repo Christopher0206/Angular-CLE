@@ -103,3 +103,15 @@
 {
     height: auto;
 }
+.centro{
+    transform: rotate(90deg);
+    
+}
+.centro.img{
+    height: 50px;
+    
+}
+.caja_botones
+{
+    margin-top: 10%;
+}

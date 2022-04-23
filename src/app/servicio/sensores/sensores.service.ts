@@ -28,7 +28,7 @@ export class SensorService {
 
 
     const tokenHeader=new HttpHeaders({
-      'Authorization':'Bearer '+ token
+      'Authorization':'Bearer '+ token   //sfiltroultimoregistro
     })
     return this.http.get(`${this.apiURL}historialbyuser`,{headers:tokenHeader})
   }
@@ -41,7 +41,7 @@ export class SensorService {
     const tokenHeader=new HttpHeaders({
       'Authorization':'Bearer '+ token
     })
-    return this.http.get('http://143.244.174.46:44129/mostrarHistorial',{headers:tokenHeader})
+    return this.http.get(this.apiURL,{headers:tokenHeader})
   }
 
 }
