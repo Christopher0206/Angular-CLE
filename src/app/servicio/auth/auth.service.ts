@@ -48,21 +48,12 @@ export class AuthService {
     return this.http.get(`${this.apiURL}idusuario`, { headers: tokenHeader });
   }
   getUsuarios() {
-    return this.http.get<User[]>(`${this.apiURL}usuario`);
-  }
-  addUsuario(usuario: User) {
-    return this.http.post(`${this.apiURL}register`, usuario);
+    return this.http.get<User[]>(`${this.apiURL}straerUsuario`);
   }
   getUsuario(id: number | string | null) {
     return this.http.get(`${this.apiURL}usuario/${id}`);
   }
-  deletUsuario(id: string) {
-    return this.http.delete(`${this.apiURL}usuario/${id}`);
-  }
-  updateUsuario(updateUsuario: User): Observable<User> {
-    return this.http.patch<User>(`${this.apiURL}editarUser/${updateUsuario.id}`, updateUsuario)
-  }
   getUsuariobyToken(t: any): Observable<any> {
-    return this.http.get(`${this.apiURL}usuario`, t);
+    return this.http.get(`${this.apiURL}idusuario`, t);
   }
 }

@@ -9,16 +9,12 @@ import { RegisterComponent } from './Componentes/Auth/registro-user/registro-use
 const routes: Routes = [
   { path: 'registro-user', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
-  //{ path: 'sidebar', component: SidebarComponent },
-  
   {
     path: 'ini',
     loadChildren: () =>
       import('./Componentes/Vistas/vistas.module').then((m) => m.VistasModule),
   },
   { path: '**', redirectTo: '/login' },
-
-
 ];
 
 @NgModule({

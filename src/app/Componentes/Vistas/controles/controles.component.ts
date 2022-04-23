@@ -5,6 +5,7 @@ import { Sensor } from 'src/app/models/sensor';
 import { User } from 'src/app/models/user';
 import { AuthService } from 'src/app/servicio/auth/auth.service';
 import { SensorService } from 'src/app/servicio/sensores/sensores.service';
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-controles',
@@ -21,7 +22,7 @@ export class ControlesComponent implements OnInit {
       //console.log(this.sid)
     })
     console.log("idusuario:"+this.sid)
-    this.sensorS.misSensores(Number(1)).subscribe((data: any) => {
+    this.sensorS.misSensores(environment.IDUSUARIO).subscribe((data: any) => {
       this.sensores = data
     })
   }

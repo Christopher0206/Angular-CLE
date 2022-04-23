@@ -10,18 +10,12 @@ export class AuthInterceptorService implements HttpInterceptor{
   constructor() { }
  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const token: string|null = localStorage.getItem('token_access');
-    console.log("SI HAY TOKEN",token);
-
+    console.log("hay un token",token);
     let request = req;
-	//Validamos si el token existe
     if (token) {
-      //Clonamos el token y lo mandamos en la cabecera de todas las peticiones HTTP
       request = req.clone({
         setHeaders: {
-          //Autorizaciòn de tipo Bearer + token
-          //El tipo de autorizaciòn depende del back
           Authorization: `bearer ${ token }`
-          
         }
       });
     }

@@ -14,7 +14,7 @@ import { AuthService } from 'src/app/servicio/auth/auth.service';
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup
   user!: LUser;
-  constructor(private fb: FormBuilder, private SERVICIO: AuthService, private router: Router, private cookieService: CookieService) {
+  constructor(private fb: FormBuilder, private SERVICIO: AuthService, private router: Router) {
     this.createFrom();
     this.login();
   }
@@ -34,12 +34,11 @@ export class LoginComponent implements OnInit {
           
           if (localStorage.getItem("token_access")) {
             localStorage.removeItem("token_access")
-            console.log("Si hay token y lo elimine")
+            console.log("remplase el token existente")
           }
           localStorage.setItem("token_access", data.token)
           localStorage.setItem("usuario", this.loginForm.get('email')?.value)
-          console.log()
-          console.log("AQUI SETEO TOKEN   " + data.token)
+          console.log("pongo el token:\t" + data.token)
           this.router.navigate(['ini/control']);
         })
       }, (error) => {

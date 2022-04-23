@@ -6,10 +6,12 @@ import {
   RouterStateSnapshot,
   UrlTree,
 } from '@angular/router';
+import { environment } from 'src/environments/environment.prod';
 import { Observable } from 'rxjs';
 import { CookieService } from 'ngx-cookie-service';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthService } from '../servicio/auth/auth.service';
+import { SensorService } from '../servicio/sensores/sensores.service';
 
 @Injectable({
   providedIn: 'root',
@@ -20,7 +22,7 @@ export class VigilanteGuard implements CanActivate {
   constructor(
     private cookieService: CookieService,
     private router: Router,
-    private service: AuthService
+    private service: AuthService,private sensor:SensorService
   ) {}
   canActivate(
     route: ActivatedRouteSnapshot,
@@ -41,9 +43,6 @@ export class VigilanteGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    //const cookie=this.cookieService.check('token_access');
-    //this.redirect(cookie);
-    //return cookie;
     if(localStorage.getItem('token_access')=="" || localStorage.getItem('token_access')==null)
     {
       this.resp = false;
@@ -52,7 +51,6 @@ export class VigilanteGuard implements CanActivate {
       this.service.gettoken().subscribe(
         (res) => {
           (this.resp = true), console.log(res);
-          //this.router.navigate(["ini/control"])
         },
         (err) => {
           (this.resp = false),
@@ -60,6 +58,28 @@ export class VigilanteGuard implements CanActivate {
             localStorage.removeItem('token_access');
           localStorage.removeItem('id');
         }
+      );
+      this.service.getUsuariobyToken(localStorage.getItem('token_access')).subscribe(
+        (res) => {
+          //localStorage.setItem('id',res)
+          environment.IDUSUARIO=res
+          //console.log("global:\t"+environment.IDUSUARIO)
+        },
+        (err) => {
+          console.log(err)
+        }//misSensores
+      );
+      this.sensor.historialbyuser(environment.IDUSUARIO).subscribe(
+        (res) => {
+          //localStorage.setItem('id',res)
+          res.forEach((element: any) => {
+            return environment.USUARIOHISTORIAL.push(element);
+          });
+          console.log("global:\t"+environment.USUARIOHISTORIAL)
+        },
+        (err) => {
+          console.log(err)
+        }//misSensores
       );
     }
     return this.resp;
