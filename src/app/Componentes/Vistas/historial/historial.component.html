@@ -7,14 +7,16 @@
         </tr>
       </thead>
       <tbody>
-        <span  [ngSwitch]="">
-          <span *ngSwitchCase>{{1}}</span>
-          <span *ngSwitchCase>{{2}}</span>
-          <span *ngSwitchCase>{{3}}</span>
-          <span *ngSwitchCase>{{4}}</span>
-          <span *ngSwitchCase>{{5}}</span>
-          <span *ngSwitchCase>{{6}}</span>
+        <div  *ngFor="let histo1 of historial">
+        <span  [ngSwitch]="histo1.idUsuario">
+          <span *ngSwitchCase="1">{{histo1.idSensor}}</span>
+          <span *ngSwitchCase="2">{{histo1.idSensor}}</span>
+          <span *ngSwitchCase="3">{{histo1.idSensor}}</span>
+          <span *ngSwitchCase="4">{{histo1.idSensor}}</span>
+          <span *ngSwitchCase="5">{{histo1.idSensor}}</span>
+          <span *ngSwitchCase="6">{{histo1.idSensor}}</span>
         </span >
+      </div> 
       </tbody>
     </table>
   </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SensorUsuario } from 'src/app/models/SensorUsuario';
+import { User } from 'src/app/models/user';
 import { SensorService } from 'src/app/servicio/sensores/sensores.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { SensorService } from 'src/app/servicio/sensores/sensores.service';
 export class HistorialComponent implements OnInit {
 
   
-  historial: any[] | undefined
+  historial:SensorUsuario[]|undefined
 
   
 
