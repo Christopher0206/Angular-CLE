@@ -44,7 +44,7 @@ export class VigilanteGuard implements CanActivate {
     //const cookie=this.cookieService.check('token_access');
     //this.redirect(cookie);
     //return cookie;
-    if(localStorage.getItem('token_access')=="")
+    if(localStorage.getItem('token_access')=="" || localStorage.getItem('token_access')==null)
     {
       this.resp = false;
     }
@@ -59,7 +59,6 @@ export class VigilanteGuard implements CanActivate {
             this.router.navigate(['/login']),
             localStorage.removeItem('token_access');
           localStorage.removeItem('id');
-          console.error(err);
         }
       );
     }
