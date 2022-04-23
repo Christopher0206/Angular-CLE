@@ -13,7 +13,6 @@ export class ControlesComponent implements OnInit {
   }
 //BLOQUEAR BOTON
   isValid($event: MouseEvent){
-    ($event.target as HTMLButtonElement).disabled = true;
 
   }
 //AVANZA EL CARRO
@@ -21,23 +20,23 @@ export class ControlesComponent implements OnInit {
     ($event.target as HTMLButtonElement).disabled = true;
   }
 //RETROCEDE EL CARRO
-  retroceder(){
+  retroceder($event: MouseEvent){
 
   }
 //DETIENE EL CARRO AUTOMATICAMENTE
-  detener(){
+  detener($event: MouseEvent){
 
   }
 //MUEVE A LA IZQUIERDA
-  izquierda(){
+  izquierda($event: MouseEvent){
 
   }
 //MUEVE A LA DERECHA
-  derecha(){
+  derecha($event: MouseEvent){
 
   }
 //SE CENTRAN LAS LLANTAS
-  centrar(){
+  centrar($event: MouseEvent){
 
   }
 
