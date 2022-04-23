@@ -95,7 +95,6 @@ export class RegisterComponent implements OnInit {
 
   setUser(): void {
     this.user = {
-      id:null,
       email: this.registroForm.get('email')?.value,
       tipo_usuario: 1,
       password: this.registroForm.get('password')?.value,

@@ -38,6 +38,7 @@ export class LoginComponent implements OnInit {
           }
           localStorage.setItem("token_access", data.token)
           localStorage.setItem("usuario", this.loginForm.get('email')?.value)
+          console.log()
           console.log("AQUI SETEO TOKEN   " + data.token)
           this.router.navigate(['ini/control']);
         })
