@@ -1,3 +1,4 @@
+import { noUndefined } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
 import { errorMessage, timeMessage } from 'src/app/funciones/alertas';
 import { hMotores } from 'src/app/models/hmotores';
@@ -15,6 +16,7 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class ControlesComponent implements OnInit {
   sensores!: Sensor[]
+  ultimosregistros!: any[]
   sid = 0
   motor!: hMotores;
   constructor(private sensorS: SensorService, private usuario: AuthService) {
@@ -23,8 +25,21 @@ export class ControlesComponent implements OnInit {
       //console.log(this.sid)
     })
     console.log("idusuario:"+this.sid)
+    //aqui se asigna en la variable gloval los ids de los sensores
     this.sensorS.misSensores(environment.IDUSUARIO).subscribe((data: any) => {
       this.sensores = data
+      this.sensores.forEach((element:any) => {
+        environment.IDSSENSORESUSUARIO=element['idSensor']
+        console.log("sensores del usuario:\t"+environment.IDSSENSORESUSUARIO)
+      });
+    })
+    //aqui se setean en ultimoregistro despues debes mostrar ultimo registro en el card
+    this.sensorS.filtroultimoregistro(environment.IDUSUARIO,environment.IDSSENSORESUSUARIO).subscribe((data: any) => {
+      this.ultimosregistros = data
+      console.log(data)
+      data.forEach((element: any) => {
+        console.log(element)
+      });
     })
   }
   ngOnInit(): void {
@@ -146,34 +161,4 @@ export class ControlesComponent implements OnInit {
       );
     console.log("DER")
   }
-  /*
-  //BLOQUEAR BOTON
-  isValid($event: MouseEvent) {
-
-  }
-  //AVANZA EL CARRO
-  avanzar($event: MouseEvent) {
-    ($event.target as HTMLButtonElement).disabled = true;
-  }
-  //RETROCEDE EL CARRO
-  retroceder($event: MouseEvent) {
-
-  }
-  //DETIENE EL CARRO AUTOMATICAMENTE
-  detener($event: MouseEvent) {
-
-  }
-  //MUEVE A LA IZQUIERDA
-  izquierda($event: MouseEvent) {
-
-  }
-  //MUEVE A LA DERECHA
-  derecha($event: MouseEvent) {
-
-  }
-  //SE CENTRAN LAS LLANTAS
-  centrar($event: MouseEvent) {
-
-  }
-  */
 }

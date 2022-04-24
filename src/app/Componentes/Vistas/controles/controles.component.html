@@ -1,13 +1,23 @@
+<link
+  href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+  rel="stylesheet"
+  id="bootstrap-css"
+/>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <div class="container-sm container-fluid">
   <div class="row">
-    <div class="col col-md-3" *ngFor="let sen1 of sensores" row>
+    <div class="col col-md-3" *ngFor="let sen1 of ultimosregistros">
       <div class="card rounded">
         <div class="card-image">
-          <span class="card-notify-badge">Sensor {{ sen1.idSensor }}</span>
+          <span class="card-notify-badge">Sensor {{ sen1 }}</span>
         </div>
         <div class="card-body text-center">
           <div class="ad-title m-auto">
             <h5>{{ sen1.Nombre }}</h5>
+            <p>
+              {{ sen1.Temperatura }}
+            </p>
           </div>
         </div>
       </div>

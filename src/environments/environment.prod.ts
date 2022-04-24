@@ -4,5 +4,5 @@ export const environment = {
   IDUSUARIO:0,
   IDRU:0,
   USUARIOHISTORIAL:[],
-  otro:0
+  IDSSENSORESUSUARIO:[]
 };

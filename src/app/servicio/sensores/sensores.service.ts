@@ -3,6 +3,7 @@ import { environment } from 'src/environments/environment.prod';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Motores } from 'src/app/models/motores';
 import { hMotores } from 'src/app/models/hmotores';
+import { right } from '@popperjs/core';
 @Injectable({
   providedIn: 'root'
 })
@@ -24,6 +25,13 @@ export class SensorService {
       'Authorization':'Bearer '+ token   //sfiltroultimoregistro
     })
     return this.http.get(`${this.apiURL}historialbyuser/`+id)
+  }
+  filtroultimoregistro(idusuario:any,idsensor:any){
+    const token=localStorage.getItem("token")
+    const tokenHeader=new HttpHeaders({
+      'Authorization':'Bearer '+ token
+    })
+    return this.http.get(`${this.apiURL}sfiltroultimoregistro/`+idusuario+`/`+idsensor,{headers:tokenHeader})
   }
   mostrarHistorial(){
     const token=localStorage.getItem("token")
