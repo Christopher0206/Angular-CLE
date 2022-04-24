@@ -18,7 +18,7 @@ import { SensoresindividualService } from 'src/app/servicio/sensores/Sensoresind
 export class ControlesComponent implements OnInit {
   sensores!: Sensor[]
   ultimosregistrosDht11: any[]=[]
-  ultimosregistrosHcSr04!: any[]
+  ultimosregistrosHcSr04: any[]=[]
   ultimosregistrosKy_031!: any[]
   ultimosregistrosMPU6050!: any[]
   sid = -1
@@ -66,7 +66,7 @@ export class ControlesComponent implements OnInit {
         timeMessage('Registrado', 1500);
         console.log(this.motor);
         //this.router.navigate(['/login']);
-      },
+      },  
       (_error) => {
         errorMessage('Ha ocurrido un error:\n' + _error);
         console.log(this.motor);
