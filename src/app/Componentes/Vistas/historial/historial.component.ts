@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SensorUsuario } from 'src/app/models/SensorUsuario';
+import { HC_SR04 } from 'src/app/models/ultrasonico';
 import { User } from 'src/app/models/user';
 import { SensorService } from 'src/app/servicio/sensores/sensores.service';
 import { environment } from 'src/environments/environment.prod';
@@ -12,17 +13,28 @@ import { environment } from 'src/environments/environment.prod';
 export class HistorialComponent implements OnInit {
 
   
-  historial:any
+  sensores: HC_SR04[]|undefined
 
   
 
   constructor( private histo:SensorService,private sensor:SensorService) {
 
+
+    this.histo.mostrarSensor().subscribe((data:any)=>{
+      this.sensores=data
+    })
+
+  }
+  ngOnInit(): void {
+  
+
+  }
+
    /*
     this.histo.mostrarHistorial().subscribe((data:any)=>{
       this.historial=data
     })
-    */
+   
     this.sensor.historialbyuser(environment.IDUSUARIO).subscribe(
       (res) => {
         
@@ -35,11 +47,9 @@ export class HistorialComponent implements OnInit {
     );
   }
   
+  */
 
 
-
-  ngOnInit(): void {
-  }
 
 
 
