@@ -8,6 +8,7 @@ import { right } from '@popperjs/core';
   providedIn: 'root'
 })
 export class SensorService {
+  idsensores:any;
   apiURL=environment.apiURL;
   constructor(private http:HttpClient) { 
 
@@ -52,7 +53,9 @@ export class SensorService {
     const tokenHeader=new HttpHeaders({
       'Authorization':'Bearer '+ token
     })
-    return this.http.get(`${this.apiURL}smisSensores/`+iduser,{headers:tokenHeader})
+    this.idsensores= this.http.get(`${this.apiURL}smisSensores/`+iduser,{headers:tokenHeader})
+    //environment.IDSSENSORESUSUARIO.push(this.idsensores)
+    return this.idsensores
   }
 }
 

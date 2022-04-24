@@ -1,6 +1,6 @@
 import { noUndefined } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
-import { errorMessage, timeMessage } from 'src/app/funciones/alertas';
+import { errorMessage, timeMessage } from 'src/app/notificasiones/notificasiones';
 import { hMotores } from 'src/app/models/hmotores';
 import { Motores } from 'src/app/models/motores';
 import { Sensor } from 'src/app/models/sensor';
@@ -24,33 +24,61 @@ export class ControlesComponent implements OnInit {
       this.sid = data
       //console.log(this.sid)
     })
-    console.log("idusuario:"+this.sid)
+    console.log("idusuario:" + this.sid)
     //aqui se asigna en la variable gloval los ids de los sensores
+    let s = 0;
     this.sensorS.misSensores(environment.IDUSUARIO).subscribe((data: any) => {
       this.sensores = data
-      this.sensores.forEach((element:any) => {
-        environment.IDSSENSORESUSUARIO=element['idSensor']
-        console.log("sensores del usuario:\t"+environment.IDSSENSORESUSUARIO)
-      });
+      this.sensores.forEach((element: any) => {
+        //environment.IDSSENSORESUSUARIO = element['idSensor']
+        s += 1;
+        environment.IDSSENSORESUSUARIO[s] =  element['idSensor']
+        this.sensorS.filtroultimoregistro(environment.IDUSUARIO,environment.IDSSENSORESUSUARIO).subscribe((data: any) => {
+          this.ultimosregistros = data
+          console.log(data)
+          data.forEach((element: any) => {
+            console.log(element)
+          });
+          console.log("ultimos registros:\t"+ this.ultimosregistros)
+        })
+        console.log("sensores del usuario:\t" + environment.IDSSENSORESUSUARIO[s])
+      }
+      );
     })
     //aqui se setean en ultimoregistro despues debes mostrar ultimo registro en el card
-    this.sensorS.filtroultimoregistro(environment.IDUSUARIO,environment.IDSSENSORESUSUARIO).subscribe((data: any) => {
-      this.ultimosregistros = data
-      console.log(data)
-      data.forEach((element: any) => {
-        console.log(element)
+    /*
+
+      
+      console.log(environment.IDSSENSORESUSUARIO)
+      console.log("xddd:\t" + this.sensorS.idsensores)
+      let s = 0;
+      this.sensorS.idsensores.forEach((element: any) => {
+        console.log("variable del servicio:\t" + element)
+        s += 1;
+        environment.IDSSENSORESUSUARIO[s] = element.idsensores
       });
-    })
+      console.log("perro madre:\t" + environment.IDSSENSORESUSUARIO.length)
+
+    //viejos
+    this.sensorS.filtroultimoregistro(environment.IDUSUARIO,environment.IDSSENSORESUSUARIO).subscribe((data: any) => {
+           this.ultimosregistros = data
+           console.log(data)
+           data.forEach((element: any) => {
+             console.log(element)
+           });
+           console.log("ultimos registros:\t"+ this.ultimosregistros)
+         })
+    */
   }
   ngOnInit(): void {
-    
+
   }
   //pruebas botones issac
   ir() {
-    this.motor = {  
-    idRU:1,
-    idSensor:5,
-    Posicion:"avanzar"
+    this.motor = {
+      idRU: 1,
+      idSensor: 5,
+      Posicion: "avanzar"
     };
     this.sensorS.insertarmotores(this.motor).subscribe(
       (data: any) => {
@@ -59,106 +87,106 @@ export class ControlesComponent implements OnInit {
         //this.router.navigate(['/login']);
       },
       (_error) => {
-        errorMessage('Ha ocurrido un error:\n'+_error);
+        errorMessage('Ha ocurrido un error:\n' + _error);
         console.log(this.motor);
       }
     );
     console.log("avanzar")
   }
-  retroceder(){
-    this.motor = {  
-      idRU:1,
-      idSensor:5,
-      Posicion:"retroceder"
-      };
-      this.sensorS.insertarmotores(this.motor).subscribe(
-        (data: any) => {
-          timeMessage('Registrado', 1500);
-          console.log(this.motor);
-          //this.router.navigate(['/login']);
-        },
-        (_error) => {
-          errorMessage('Ha ocurrido un error:\n'+_error);
-          console.log(this.motor);
-        }
-      );
-      console.log("avanzar")
+  retroceder() {
+    this.motor = {
+      idRU: 1,
+      idSensor: 5,
+      Posicion: "retroceder"
+    };
+    this.sensorS.insertarmotores(this.motor).subscribe(
+      (data: any) => {
+        timeMessage('Registrado', 1500);
+        console.log(this.motor);
+        //this.router.navigate(['/login']);
+      },
+      (_error) => {
+        errorMessage('Ha ocurrido un error:\n' + _error);
+        console.log(this.motor);
+      }
+    );
+    console.log("avanzar")
     console.log("retroceder")
   }
   stop() {
-    this.motor = {  
-      idRU:1,
-      idSensor:5,
-      Posicion:"stop"
-      };
-      this.sensorS.insertarmotores(this.motor).subscribe(
-        (data: any) => {
-          timeMessage('Registrado', 1500);
-          console.log(this.motor);
-          //this.router.navigate(['/login']);
-        },
-        (_error) => {
-          errorMessage('Ha ocurrido un error:\n'+_error);
-          console.log(this.motor);
-        }
-      );
+    this.motor = {
+      idRU: 1,
+      idSensor: 5,
+      Posicion: "stop"
+    };
+    this.sensorS.insertarmotores(this.motor).subscribe(
+      (data: any) => {
+        timeMessage('Registrado', 1500);
+        console.log(this.motor);
+        //this.router.navigate(['/login']);
+      },
+      (_error) => {
+        errorMessage('Ha ocurrido un error:\n' + _error);
+        console.log(this.motor);
+      }
+    );
     console.log("stop")
   }
   IZQ() {
-    this.motor = {  
-      idRU:1,
-      idSensor:6,
-      Posicion:"IZQ"
-      };
-      this.sensorS.insertarmotores(this.motor).subscribe(
-        (data: any) => {
-          timeMessage('Registrado', 1500);
-          console.log(this.motor);
-          //this.router.navigate(['/login']);
-        },
-        (_error) => {
-          errorMessage('Ha ocurrido un error:\n'+_error);
-          console.log(this.motor);
-        }
-      );
+    this.motor = {
+      idRU: 1,
+      idSensor: 6,
+      Posicion: "IZQ"
+    };
+    this.sensorS.insertarmotores(this.motor).subscribe(
+      (data: any) => {
+        timeMessage('Registrado', 1500);
+        console.log(this.motor);
+        //this.router.navigate(['/login']);
+      },
+      (_error) => {
+        errorMessage('Ha ocurrido un error:\n' + _error);
+        console.log(this.motor);
+      }
+    );
     console.log("IZQ")
   }
   CENTRO() {
-    this.motor = {  
-      idRU:1,
-      idSensor:6,
-      Posicion:"CENTRO"
-      };
-      this.sensorS.insertarmotores(this.motor).subscribe(
-        (data: any) => {
-          timeMessage('Registrado', 1500);
-          console.log(this.motor);
-          //this.router.navigate(['/login']);
-        },
-        (_error) => {
-          errorMessage('Ha ocurrido un error:\n'+_error);
-          console.log(this.motor);
-        }
-      );
+    this.motor = {
+      idRU: 1,
+      idSensor: 6,
+      Posicion: "CENTRO"
+    };
+    this.sensorS.insertarmotores(this.motor).subscribe(
+      (data: any) => {
+        timeMessage('Registrado', 1500);
+        console.log(this.motor);
+        //this.router.navigate(['/login']);
+      },
+      (_error) => {
+        errorMessage('Ha ocurrido un error:\n' + _error);
+        console.log(this.motor);
+      }
+    );
     console.log("CENTRO")
   }
   DER() {
-    this.motor = {  
-      idRU:1,
-      idSensor:6,
-      Posicion:"DER"
-      };
-      this.sensorS.insertarmotores(this.motor).subscribe(
-        (data: any) => {
-          timeMessage('Registrado', 1500);
-          console.log(this.motor);
-          //this.router.navigate(['/login']);
-        },
-        (_error) => {
-          errorMessage('Ha ocurrido un error:\n'+_error);
-          console.log(this.motor);
-        }
-      );
+    this.motor = {
+      idRU: 1,
+      idSensor: 6,
+      Posicion: "DER"
+    };
+    this.sensorS.insertarmotores(this.motor).subscribe(
+      (data: any) => {
+        timeMessage('Registrado', 1500);
+        console.log(this.motor);
+        //this.router.navigate(['/login']);
+      },
+      (_error) => {
+        errorMessage('Ha ocurrido un error:\n' + _error);
+        console.log(this.motor);
+      }
+    );
     console.log("DER")
   }
 }

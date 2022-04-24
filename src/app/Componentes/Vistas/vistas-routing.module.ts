@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { VigilanteGuard } from 'src/app/guard/vigilante.guard';
+import { RetenGuard } from 'src/app/guard/Reten.guard';
 import { ControlesComponent } from './controles/controles.component';
 import { DocumentacionComponent } from './documentacion/documentacion.component';
 import { GraficasComponent } from './graficas/graficas.component';
@@ -17,7 +17,7 @@ const routes: Routes = [
       { path: 'control', component: ControlesComponent },
       { path: '**', redirectTo: '/ini/control' },
     ],
-    canActivateChild: [VigilanteGuard],
+    canActivateChild: [RetenGuard],
   },
 ];
 

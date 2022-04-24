@@ -4,5 +4,5 @@ export const environment = {
   IDUSUARIO:0,
   IDRU:0,
   USUARIOHISTORIAL:[],
-  IDSSENSORESUSUARIO:[]
+  IDSSENSORESUSUARIO:Array<any>()
 };

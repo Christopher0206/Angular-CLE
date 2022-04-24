@@ -20,7 +20,7 @@ import { AuthInterceptorService } from './interceptor/auth-interceptor.service';
 import { ControlesComponent } from '../app/Componentes/Vistas/controles/controles.component';
 import { SensorService } from './servicio/sensores/sensores.service';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
-import { VigilanteGuard } from './guard/vigilante.guard';
+import { RetenGuard } from './guard/Reten.guard';
 import { CookieService } from 'ngx-cookie-service';
 
 
@@ -52,7 +52,7 @@ import { CookieService } from 'ngx-cookie-service';
       useClass: AuthInterceptorService,
       multi: true,
     },
-    VigilanteGuard,
+    RetenGuard,
     SensorService
   ],
   bootstrap: [AppComponent],

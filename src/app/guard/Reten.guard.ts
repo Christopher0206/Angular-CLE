@@ -16,7 +16,7 @@ import { SensorService } from '../servicio/sensores/sensores.service';
 @Injectable({
   providedIn: 'root',
 })
-export class VigilanteGuard implements CanActivate {
+export class RetenGuard implements CanActivate {
   resp: boolean = true;
 
   constructor(

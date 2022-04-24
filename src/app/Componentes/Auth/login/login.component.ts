@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
-import { errorMessage, successDialog } from 'src/app/funciones/alertas';
+import { errorMessage, successDialog } from 'src/app/notificasiones/notificasiones';
 import { LUser } from 'src/app/models/loginuser';
 import { AuthService } from 'src/app/servicio/auth/auth.service';
 

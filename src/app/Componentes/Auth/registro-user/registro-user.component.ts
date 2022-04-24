@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl,FormGroup,Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
-import { errorMessage, timeMessage } from 'src/app/funciones/alertas';
+import { errorMessage, timeMessage } from 'src/app/notificasiones/notificasiones';
 import { User } from 'src/app/models/user';
 import { AuthService } from 'src/app/servicio/auth/auth.service';
 
