@@ -1,39 +1,42 @@
+<link href="http://fonts.cdnfonts.com/css/ethnocentric" rel="stylesheet">
+                
+
 <div class="container" >
-  <div class="row card-body mx-md-2">
+  <div class="row card-body mx-md-2" id="contenedor">
     <div class="col">
       <form [formGroup]="registroForm" (ngSubmit)="registro()">
-        <label class="sr-only" for="inputUsername">Username</label>
+        <label class="sr-only" for="inputUsername">Usuario</label>
         <input
           type="text"
           class="form-control mb-2"
           id="inputUsername"
-          placeholder="Username"
+          placeholder="Usuario"
           formControlName="username"
         />
-        <label class="sr-only" for="inputEmail">Email Address</label>
+        <label class="sr-only" for="inputEmail">Correo Electronico</label>
         <input
           type="email"
           class="form-control mb-2"
           id="inputEmail"
-          placeholder="Email Address"
+          placeholder="Correo Electronico"
           formControlName="email"
           [class.is-invalid]="emailValidate"
         />
-        <label class="sr-only" for="inputPassword">Password</label>
+        <label class="sr-only" for="inputPassword">Contraseña</label>
         <input
           type="password"
           class="form-control mb-3"
           id="inputPassword"
-          placeholder="Password"
+          placeholder="Contraseña"
           formControlName="password"
           [class.is-invalid]="passwordValidate"
         />
-        <label class="sr-only" for="inputPassword2">Confirm Password</label>
+        <label class="sr-only" for="inputPassword2">Confirmar Contraseña</label>
         <input
           type="password"
           class="form-control mb-3"
           id="inputPassword2"
-          placeholder="Confirm Password"
+          placeholder="Confirmar Contraseña"
           formControlName="password2"
           [class.is-invalid]="password2Validate"
         />
@@ -57,11 +60,8 @@
         <h4 class="mt-1 mb-5 pb-1">REGISTRAR</h4>
         <br />
         <a
-          style="
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
-              sans-serif;
-            font-size: 23px;
-          "
+          style="font-family: 'Ethnocentric Rg', sans-serif;
+          font-size: small;" 
           >Ya tienes una cuenta?</a
         >
       </div>

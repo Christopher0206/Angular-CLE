@@ -1,11 +1,17 @@
 #nav{
     background-color: #141514;
+    font-family: 'Ethnocentric Rg', sans-serif;
+    font-size: small;
 }
 
 *{
     color: #96aab7;
+    font-family: 'Ethnocentric Rg', sans-serif;
+    font-size: small;                                             
 }
 
 #color{
     color: #96aab7;
+    font-family: 'Ethnocentric Rg', sans-serif;
+    font-size: small;
 }
