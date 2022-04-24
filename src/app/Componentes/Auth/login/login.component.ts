@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
             console.log("remplase el token existente")
           }
           localStorage.setItem("token_access", data.token)
-          localStorage.setItem("usuario", this.loginForm.get('email')?.value)
+          //localStorage.setItem("usuario", this.loginForm.get('email')?.value)
           console.log("pongo el token:\t" + data.token)
           this.router.navigate(['ini/control']);
         })

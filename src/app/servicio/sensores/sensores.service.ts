@@ -20,12 +20,12 @@ export class SensorService {
     })
     return this.http.get(`${this.apiURL}mostrarSensoresa`)
   }
-  historialbyuser(id:any){
+  historialbyuser(){
     const token=localStorage.getItem("token")
     const tokenHeader=new HttpHeaders({
       'Authorization':'Bearer '+ token   //sfiltroultimoregistro
     })
-    return this.http.get(`${this.apiURL}historialbyuser/`+id)
+    return this.http.get(`${this.apiURL}historialbyuser/`+environment.IDUSUARIO)
   }
   filtroultimoregistro(idusuario:any,idsensor:any){
     const token=localStorage.getItem("token")
@@ -58,7 +58,7 @@ export class SensorService {
     return this.idsensores
   }
 
-  traersensor1(){
+  historialbyuser2(){
     const token=localStorage.getItem("token")
 
 
@@ -67,7 +67,7 @@ export class SensorService {
     })
 
 
-    return this.http.get('http://127.0.0.1:3333/mostrartodHcSr04/'+environment.IDUSUARIO,{headers:tokenHeader})
+    return this.http.get('http://127.0.0.1:3333/historialbyuser/'+environment.IDUSUARIO,{headers:tokenHeader})
   }
 }
 

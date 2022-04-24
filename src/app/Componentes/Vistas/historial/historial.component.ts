@@ -15,15 +15,15 @@ export class HistorialComponent implements OnInit {
 
   
 
-  sensoress: HIBRIDO[]|undefined
+  histo: any[]=[]
   
+  hola="hola";
+  constructor( private histos:SensorService) {
 
-  constructor( private histo:SensorService) {
-
-
-    this.histo.traersensor1().subscribe((data:any)=>{
-      this.sensoress=data
-      console.log(this.sensoress)
+    
+    this.histos.historialbyuser().subscribe((data:any)=>{
+      this.histo=data
+      console.log(this.histo)
     })
 
   }

@@ -9,29 +9,123 @@
   <div class="row">
     <div class="col col-md-3" *ngFor="let sen1 of ultimosregistrosDht11">
       <div class="card rounded">
-        <div class="card-image" >
-          <span class="card-notify-badge">Sensor {{ ultimosregistrosDht11[0]['idSensor'] }}</span>
+        <div class="card-image">
+          <span class="card-notify-badge"
+            >Sensor {{ ultimosregistrosDht11[0]["idSensor"] }}</span
+          >
         </div>
         <div class="card-body text-center">
           <div class="ad-title m-auto">
-            <h5>Nombre:{{ ultimosregistrosDht11[0]['Nombre'] }}</h5>
-            <p>Temperatura:
-              {{ ultimosregistrosDht11[0]['Temperatura'] }}
+            <h5>Nombre:{{ ultimosregistrosDht11[0]["Nombre"] }}</h5>
+            <p>
+              Temperatura:
+              {{ ultimosregistrosDht11[0]["Temperatura"] }}
             </p>
-            <p>Humedad:
-              {{ ultimosregistrosDht11[0]['Humedad'] }}
+            <p>
+              Humedad:
+              {{ ultimosregistrosDht11[0]["Humedad"] }}
             </p>
-            <p>{{ultimosregistrosDht11[0]['acel_x']}}</p>
-            <p>{{ultimosregistrosDht11[0]['acel_y']}}</p>
-            <p>{{ultimosregistrosDht11[0]['acel_z']}}</p>
-            <p>{{ultimosregistrosDht11[0]['ang_x']}}</p>
-            <p>{{ultimosregistrosDht11[0]['ang_y']}}</p>
-            <p>{{ultimosregistrosDht11[0]['ang_z']}}</p>
-            <p>{{ultimosregistrosDht11[0]['Distancia']}}</p>
-            <p>{{ultimosregistrosDht11[0]['Deteccion']}}</p>
+            <p>{{ ultimosregistrosDht11[0]["acel_x"] }}</p>
+            <p>{{ ultimosregistrosDht11[0]["acel_y"] }}</p>
+            <p>{{ ultimosregistrosDht11[0]["acel_z"] }}</p>
+            <p>{{ ultimosregistrosDht11[0]["ang_x"] }}</p>
+            <p>{{ ultimosregistrosDht11[0]["ang_y"] }}</p>
+            <p>{{ ultimosregistrosDht11[0]["ang_z"] }}</p>
+            <p>{{ ultimosregistrosDht11[0]["Distancia"] }}</p>
+            <p>{{ ultimosregistrosDht11[0]["Deteccion"] }}</p>
           </div>
         </div>
       </div>
+      
+    </div>
+    <div class="col col-md-3" *ngFor="let sen1 of ultimosregistrosHcSr04">
+      <div class="card rounded">
+        <div class="card-image">
+          <span class="card-notify-badge"
+            >Sensor {{ ultimosregistrosHcSr04[0]["idSensor"] }}</span
+          >
+        </div>
+        <div class="card-body text-center">
+          <div class="ad-title m-auto">
+            <h5>Nombre:{{ ultimosregistrosHcSr04[0]["Nombre"] }}</h5>
+            <p>
+              
+              {{ ultimosregistrosHcSr04[0]["Temperatura"] }}
+            </p>
+            <p>
+              
+              {{ ultimosregistrosHcSr04[0]["Humedad"] }}
+            </p>
+            <p>{{ ultimosregistrosHcSr04[0]["acel_x"] }}</p>
+            <p>{{ ultimosregistrosHcSr04[0]["acel_y"] }}</p>
+            <p>{{ ultimosregistrosHcSr04[0]["acel_z"] }}</p>
+            <p>{{ ultimosregistrosHcSr04[0]["ang_x"] }}</p>
+            <p>{{ ultimosregistrosHcSr04[0]["ang_y"] }}</p>
+            <p>{{ ultimosregistrosHcSr04[0]["ang_z"] }}</p>
+            <p>Distancia:{{ ultimosregistrosHcSr04[0]["Distancia"] }}</p>
+            <p>{{ ultimosregistrosHcSr04[0]["Deteccion"] }}</p>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    <div class="col col-md-3" *ngFor="let sen1 of ultimosregistrosKy_031">
+      <div class="card rounded">
+        <div class="card-image">
+          <span class="card-notify-badge"
+            >Sensor {{ ultimosregistrosKy_031[0]["idSensor"] }}</span
+          >
+        </div>
+        <div class="card-body text-center">
+          <div class="ad-title m-auto">
+            <h5>Nombre:{{ ultimosregistrosKy_031[0]["Nombre"] }}</h5>
+            <p>
+              {{ ultimosregistrosKy_031[0]["Temperatura"] }}
+            </p>
+            <p>
+              {{ ultimosregistrosKy_031[0]["Humedad"] }}
+            </p>
+            <p>{{ ultimosregistrosKy_031[0]["acel_x"] }}</p>
+            <p>{{ ultimosregistrosKy_031[0]["acel_y"] }}</p>
+            <p>{{ ultimosregistrosKy_031[0]["acel_z"] }}</p>
+            <p>{{ ultimosregistrosKy_031[0]["ang_x"] }}</p>
+            <p>{{ ultimosregistrosKy_031[0]["ang_y"] }}</p>
+            <p>{{ ultimosregistrosKy_031[0]["ang_z"] }}</p>
+            <p>{{ ultimosregistrosKy_031[0]["Distancia"] }}</p>
+            <p>Deteccion:{{ ultimosregistrosKy_031[0]["Deteccion"] }}</p>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    <div class="col col-md-3" *ngFor="let sen1 of ultimosregistrosMPU6050">
+      <div class="card rounded">
+        <div class="card-image">
+          <span class="card-notify-badge"
+            >Sensor {{ ultimosregistrosMPU6050[0]["idSensor"] }}</span
+          >
+        </div>
+        <div class="card-body text-center">
+          <div class="ad-title m-auto">
+            <h5>Nombre:{{ ultimosregistrosMPU6050[0]["Nombre"] }}</h5>
+            <p>
+              {{ ultimosregistrosMPU6050[0]["Temperatura"] }}
+            </p>
+            <p>
+              {{ ultimosregistrosMPU6050[0]["Humedad"] }}
+            </p>
+            <p>acel_x:{{ultimosregistrosMPU6050[0]["acel_x"] }}</p>
+            <p>acel_y:{{ultimosregistrosMPU6050[0]["acel_y"] }}</p>
+            <p>acel_z:{{ultimosregistrosMPU6050[0]["acel_z"] }}</p>
+            <p>ang_x:{{ultimosregistrosMPU6050[0]["ang_x"] }}</p>
+            <p>ang_y:{{ultimosregistrosMPU6050[0]["ang_y"] }}</p>
+            <p>ang_z:{{ultimosregistrosMPU6050[0]["ang_z"] }}</p>
+            <p>{{ ultimosregistrosMPU6050[0]["Distancia"] }}</p>
+            <p>{{ ultimosregistrosMPU6050[0]["Deteccion"] }}</p>
+          </div>
+        </div>
+      </div>
+      
     </div>
   </div>
   <br />

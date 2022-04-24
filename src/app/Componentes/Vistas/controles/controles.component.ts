@@ -20,8 +20,6 @@ export class ControlesComponent implements OnInit {
   ultimosregistrosDht11: any[]=[]
   ultimosregistrosHcSr04!: any[]
   ultimosregistrosKy_031!: any[]
-  ultimosregistrosMotore!: any[]
-  ultimosregistrosServo!: any[]
   ultimosregistrosMPU6050!: any[]
   sid = -1
   motor!: hMotores;
@@ -35,9 +33,21 @@ export class ControlesComponent implements OnInit {
     console.log("idusuario:" + this.sid)
     //aqui se asigna en la variable gloval los ids de los sensores
 
-    let indicemissenosresindividuales = 0;
+    
     this.missensores.miDht11(environment.IDUSUARIO).subscribe((data: any) => {
       this.ultimosregistrosDht11.push(data)
+    })
+
+    this.missensores.miMPU6050(environment.IDUSUARIO).subscribe((data: any) => {
+      this.ultimosregistrosMPU6050.push(data)
+    })
+    
+    this.missensores.miKy_031(environment.IDUSUARIO).subscribe((data: any) => {
+      this.ultimosregistrosKy_031.push(data)
+    })
+    
+    this.missensores.miHcSr04(environment.IDUSUARIO).subscribe((data: any) => {
+      this.ultimosregistrosHcSr04.push(data)
     })
     console.log(this.sid)
   }

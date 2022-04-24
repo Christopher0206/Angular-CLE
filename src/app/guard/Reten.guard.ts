@@ -56,7 +56,7 @@ export class RetenGuard implements CanActivate {
           (this.resp = false),
             this.router.navigate(['/login']),
             localStorage.removeItem('token_access');
-          localStorage.removeItem('id');
+          //localStorage.removeItem('id');
         }
       );
       this.service.getUsuariobyToken(localStorage.getItem('token_access')).subscribe(
