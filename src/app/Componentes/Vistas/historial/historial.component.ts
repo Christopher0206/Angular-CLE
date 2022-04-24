@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HIBRIDO } from 'src/app/models/hibrido';
 import { SensorUsuario } from 'src/app/models/SensorUsuario';
 import { HC_SR04 } from 'src/app/models/ultrasonico';
 import { User } from 'src/app/models/user';
@@ -13,15 +14,16 @@ import { environment } from 'src/environments/environment.prod';
 export class HistorialComponent implements OnInit {
 
   
-  sensores: HC_SR04[]|undefined
 
+  sensoress: HIBRIDO[]|undefined
   
 
-  constructor( private histo:SensorService,private sensor:SensorService) {
+  constructor( private histo:SensorService) {
 
 
     this.histo.traersensor1().subscribe((data:any)=>{
-      this.sensores=data
+      this.sensoress=data
+      console.log(this.sensoress)
     })
 
   }
@@ -31,6 +33,22 @@ export class HistorialComponent implements OnInit {
   }
 
    /*
+  Descripcion: "Sensor usado para medir distancias."
+Fechacreacion: "2022-04-24T02:59:10.810Z"
+Fechadecreacion: "2000-01-01T06:00:00.000Z"
+IMG: "https://mexico.newark.com/productimages/large/en_US/11X5783-40.jpg"
+Nombre: "Ultrasonico"
+Posicion: "avanzar"
+idH: 2
+idRU: 1
+idSensor: 2
+idUsuario: 2
+_id: "6264bcfe47c73ca1b632d087"
+
+
+
+
+
     this.histo.mostrarHistorial().subscribe((data:any)=>{
       this.historial=data
     })

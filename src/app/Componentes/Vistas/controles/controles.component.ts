@@ -8,6 +8,7 @@ import { User } from 'src/app/models/user';
 import { AuthService } from 'src/app/servicio/auth/auth.service';
 import { SensorService } from 'src/app/servicio/sensores/sensores.service';
 import { environment } from 'src/environments/environment.prod';
+import { SensoresindividualService } from 'src/app/servicio/sensores/SensoresindividualService';
 
 @Component({
   selector: 'app-controles',
@@ -16,59 +17,29 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class ControlesComponent implements OnInit {
   sensores!: Sensor[]
-  ultimosregistros!: any[]
-  sid = 0
+  ultimosregistrosDht11: any[]=[]
+  ultimosregistrosHcSr04!: any[]
+  ultimosregistrosKy_031!: any[]
+  ultimosregistrosMotore!: any[]
+  ultimosregistrosServo!: any[]
+  ultimosregistrosMPU6050!: any[]
+  sid = -1
   motor!: hMotores;
-  constructor(private sensorS: SensorService, private usuario: AuthService) {
+  constructor(private sensorS: SensorService,
+    private usuario: AuthService,
+    private missensores: SensoresindividualService) {
     this.usuario.ididusuario().subscribe((data: any) => {
       this.sid = data
       //console.log(this.sid)
     })
     console.log("idusuario:" + this.sid)
     //aqui se asigna en la variable gloval los ids de los sensores
-    let s = 0;
-    this.sensorS.misSensores(environment.IDUSUARIO).subscribe((data: any) => {
-      this.sensores = data
-      this.sensores.forEach((element: any) => {
-        //environment.IDSSENSORESUSUARIO = element['idSensor']
-        s += 1;
-        environment.IDSSENSORESUSUARIO[s] =  element['idSensor']
-        this.sensorS.filtroultimoregistro(environment.IDUSUARIO,environment.IDSSENSORESUSUARIO).subscribe((data: any) => {
-          this.ultimosregistros = data
-          console.log(data)
-          data.forEach((element: any) => {
-            console.log(element)
-          });
-          console.log("ultimos registros:\t"+ this.ultimosregistros)
-        })
-        console.log("sensores del usuario:\t" + environment.IDSSENSORESUSUARIO[s])
-      }
-      );
+
+    let indicemissenosresindividuales = 0;
+    this.missensores.miDht11(environment.IDUSUARIO).subscribe((data: any) => {
+      this.ultimosregistrosDht11.push(data)
     })
-    //aqui se setean en ultimoregistro despues debes mostrar ultimo registro en el card
-    /*
-
-      
-      console.log(environment.IDSSENSORESUSUARIO)
-      console.log("xddd:\t" + this.sensorS.idsensores)
-      let s = 0;
-      this.sensorS.idsensores.forEach((element: any) => {
-        console.log("variable del servicio:\t" + element)
-        s += 1;
-        environment.IDSSENSORESUSUARIO[s] = element.idsensores
-      });
-      console.log("perro madre:\t" + environment.IDSSENSORESUSUARIO.length)
-
-    //viejos
-    this.sensorS.filtroultimoregistro(environment.IDUSUARIO,environment.IDSSENSORESUSUARIO).subscribe((data: any) => {
-           this.ultimosregistros = data
-           console.log(data)
-           data.forEach((element: any) => {
-             console.log(element)
-           });
-           console.log("ultimos registros:\t"+ this.ultimosregistros)
-         })
-    */
+    console.log(this.sid)
   }
   ngOnInit(): void {
 
@@ -190,3 +161,55 @@ export class ControlesComponent implements OnInit {
     console.log("DER")
   }
 }
+//aqui se setean en ultimoregistro despues debes mostrar ultimo registro en el card
+/*
+let s = 0;
+this.sensorS.misSensores(environment.IDUSUARIO).subscribe((data: any) => {
+  this.sensores = data
+  this.sensores.forEach((element: any) => {
+    //environment.IDSSENSORESUSUARIO = element['idSensor']
+    s += 1;
+    environment.IDSSENSORESUSUARIO[s] = element['idSensor']
+
+  }
+  );
+})
+*/
+
+
+
+
+/*
+ this.sensorS.filtroultimoregistro(environment.IDUSUARIO,environment.IDSSENSORESUSUARIO).subscribe((data: any) => {
+      this.ultimosregistros = data
+      console.log(data)
+      data.forEach((element: any) => {
+        console.log(element)
+      });
+      console.log("ultimos registros:\t"+ this.ultimosregistros)
+    })
+    console.log("sensores del usuario:\t" + environment.IDSSENSORESUSUARIO[s])
+
+
+
+  
+  console.log(environment.IDSSENSORESUSUARIO)
+  console.log("xddd:\t" + this.sensorS.idsensores)
+  let s = 0;
+  this.sensorS.idsensores.forEach((element: any) => {
+    console.log("variable del servicio:\t" + element)
+    s += 1;
+    environment.IDSSENSORESUSUARIO[s] = element.idsensores
+  });
+  console.log("perro madre:\t" + environment.IDSSENSORESUSUARIO.length)
+
+//viejos
+this.sensorS.filtroultimoregistro(environment.IDUSUARIO,environment.IDSSENSORESUSUARIO).subscribe((data: any) => {
+       this.ultimosregistros = data
+       console.log(data)
+       data.forEach((element: any) => {
+         console.log(element)
+       });
+       console.log("ultimos registros:\t"+ this.ultimosregistros)
+     })
+*/

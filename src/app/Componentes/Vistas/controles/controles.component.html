@@ -7,17 +7,28 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <div class="container-sm container-fluid">
   <div class="row">
-    <div class="col col-md-3" *ngFor="let sen1 of ultimosregistros">
+    <div class="col col-md-3" *ngFor="let sen1 of ultimosregistrosDht11">
       <div class="card rounded">
-        <div class="card-image">
-          <span class="card-notify-badge">Sensor {{ sen1.idSensor }}</span>
+        <div class="card-image" >
+          <span class="card-notify-badge">Sensor {{ ultimosregistrosDht11[0]['idSensor'] }}</span>
         </div>
         <div class="card-body text-center">
           <div class="ad-title m-auto">
-            <h5>{{ sen1.Nombre }}</h5>
-            <p>
-              {{ sen1.Temperatura }}
+            <h5>Nombre:{{ ultimosregistrosDht11[0]['Nombre'] }}</h5>
+            <p>Temperatura:
+              {{ ultimosregistrosDht11[0]['Temperatura'] }}
             </p>
+            <p>Humedad:
+              {{ ultimosregistrosDht11[0]['Humedad'] }}
+            </p>
+            <p>{{ultimosregistrosDht11[0]['acel_x']}}</p>
+            <p>{{ultimosregistrosDht11[0]['acel_y']}}</p>
+            <p>{{ultimosregistrosDht11[0]['acel_z']}}</p>
+            <p>{{ultimosregistrosDht11[0]['ang_x']}}</p>
+            <p>{{ultimosregistrosDht11[0]['ang_y']}}</p>
+            <p>{{ultimosregistrosDht11[0]['ang_z']}}</p>
+            <p>{{ultimosregistrosDht11[0]['Distancia']}}</p>
+            <p>{{ultimosregistrosDht11[0]['Deteccion']}}</p>
           </div>
         </div>
       </div>
