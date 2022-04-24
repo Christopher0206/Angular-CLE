@@ -67,7 +67,7 @@ export class SensorService {
     })
 
 
-    return this.http.get('http://127.0.0.1:3333/historialbyuser/'+environment.IDUSUARIO,{headers:tokenHeader})
+    return this.http.get('http://143.244.174.46:3333/historialbyuser/'+environment.IDUSUARIO,{headers:tokenHeader})
   }
 }
 
