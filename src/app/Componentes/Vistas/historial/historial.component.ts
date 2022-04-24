@@ -20,7 +20,7 @@ export class HistorialComponent implements OnInit {
   constructor( private histo:SensorService,private sensor:SensorService) {
 
 
-    this.histo.mostrarSensor().subscribe((data:any)=>{
+    this.histo.traersensor1().subscribe((data:any)=>{
       this.sensores=data
     })
 

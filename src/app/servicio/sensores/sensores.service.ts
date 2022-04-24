@@ -57,5 +57,17 @@ export class SensorService {
     //environment.IDSSENSORESUSUARIO.push(this.idsensores)
     return this.idsensores
   }
+
+  traersensor1(){
+    const token=localStorage.getItem("token")
+
+
+    const tokenHeader=new HttpHeaders({
+      'Authorization':'Bearer '+ token
+    })
+
+
+    return this.http.get('http://127.0.0.1:3333/mostrartodHcSr04',{headers:tokenHeader})
+  }
 }
 
