@@ -10,8 +10,7 @@
     <div class="col col-md-3" *ngFor="let sen1 of ultimosregistrosDht11">
       <div class="card rounded">
         <div class="card-image">
-          <span class="card-notify-badge"
-            >Sensor {{ ultimosregistrosDht11[0]["idSensor"] }}</span
+          <span class="card-notify-badge">Sensor {{ ultimosregistrosDht11[0]["idSensor"] }}</span
           >
         </div>
         <div class="card-body text-center">
@@ -33,6 +32,7 @@
             <p>{{ ultimosregistrosDht11[0]["ang_z"] }}</p>
             <p>{{ ultimosregistrosDht11[0]["Distancia"] }}</p>
             <p>{{ ultimosregistrosDht11[0]["Deteccion"] }}</p>
+            <p>{{ ultimosregistrosDht11[0]["Posicion"] }}</p>
           </div>
         </div>
       </div>
@@ -64,6 +64,7 @@
             <p>{{ ultimosregistrosHcSr04[0]["ang_z"] }}</p>
             <p>Distancia:{{ ultimosregistrosHcSr04[0]["Distancia"] }}</p>
             <p>{{ ultimosregistrosHcSr04[0]["Deteccion"] }}</p>
+            <p>{{ ultimosregistrosDht11[0]["Posicion"] }}</p>
           </div>
         </div>
       </div>
@@ -72,8 +73,7 @@
     <div class="col col-md-3" *ngFor="let sen1 of ultimosregistrosKy_031">
       <div class="card rounded">
         <div class="card-image">
-          <span class="card-notify-badge"
-            >Sensor {{ ultimosregistrosKy_031[0]["idSensor"] }}</span
+          <span class="card-notify-badge">Sensor {{ ultimosregistrosKy_031[0]["idSensor"] }}</span
           >
         </div>
         <div class="card-body text-center">
@@ -93,6 +93,7 @@
             <p>{{ ultimosregistrosKy_031[0]["ang_z"] }}</p>
             <p>{{ ultimosregistrosKy_031[0]["Distancia"] }}</p>
             <p>Deteccion:{{ ultimosregistrosKy_031[0]["Deteccion"] }}</p>
+            <p>{{ ultimosregistrosDht11[0]["Posicion"] }}</p>
           </div>
         </div>
       </div>
@@ -122,6 +123,7 @@
             <p>ang_z:{{ultimosregistrosMPU6050[0]["ang_z"] }}</p>
             <p>{{ ultimosregistrosMPU6050[0]["Distancia"] }}</p>
             <p>{{ ultimosregistrosMPU6050[0]["Deteccion"] }}</p>
+            <p>{{ ultimosregistrosMPU6050[0]["Posicion"] }}</p>
           </div>
         </div>
       </div>

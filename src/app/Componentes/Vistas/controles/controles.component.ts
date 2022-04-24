@@ -54,7 +54,7 @@ export class ControlesComponent implements OnInit {
   ngOnInit(): void {
 
   }
-  //pruebas botones issac
+  //pruebas botones 
   ir() {
     this.motor = {
       idRU: 1,
