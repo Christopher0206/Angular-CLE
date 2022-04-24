@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment.prod';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Motores } from 'src/app/models/motores';
+import { hMotores } from 'src/app/models/hmotores';
 @Injectable({
   providedIn: 'root'
 })
@@ -15,7 +16,7 @@ export class SensorService {
     const tokenHeader=new HttpHeaders({
       'Authorization':'Bearer '+ token
     })
-    return this.http.get(`${this.apiURL}smostrarSensoresa`,{headers:tokenHeader})
+    return this.http.get(`${this.apiURL}mostrarSensoresa`)
   }
   historialbyuser(id:any){
     const token=localStorage.getItem("token")
@@ -29,9 +30,9 @@ export class SensorService {
     const tokenHeader=new HttpHeaders({
       'Authorization':'Bearer '+ token
     })
-    return this.http.get(this.apiURL,{headers:tokenHeader})
+    return this.http.get(`${this.apiURL}mostrarHistorial`)
   }
-  insertarmotores(body:Motores){
+  insertarmotores(body:hMotores){
     const token=localStorage.getItem("token")
     const tokenHeader=new HttpHeaders({
       'Authorization':'Bearer '+ token
@@ -43,7 +44,7 @@ export class SensorService {
     const tokenHeader=new HttpHeaders({
       'Authorization':'Bearer '+ token
     })
-    return this.http.get(`${this.apiURL}misSensores`+"/"+iduser)
+    return this.http.get(`${this.apiURL}smisSensores/`+iduser,{headers:tokenHeader})
   }
 }
 

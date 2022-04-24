@@ -8,13 +8,13 @@
       </thead>
       <tbody>
         <div  *ngFor="let histo1 of historial">
-        <span  [ngSwitch]="histo1.idUsuario">
-          <span *ngSwitchCase="1">{{histo1.idSensor}}</span>
-          <span *ngSwitchCase="2">{{histo1.idSensor}}</span>
-          <span *ngSwitchCase="3">{{histo1.idSensor}}</span>
-          <span *ngSwitchCase="4">{{histo1.idSensor}}</span>
-          <span *ngSwitchCase="5">{{histo1.idSensor}}</span>
-          <span *ngSwitchCase="6">{{histo1.idSensor}}</span>
+        <span  [ngSwitch]="histo1.idSensor">
+          <span *ngSwitchCase="1">{{histo1}}</span>
+          <span *ngSwitchCase="2">{{histo1}}</span>
+          <span *ngSwitchCase="3">{{histo1}}</span>
+          <span *ngSwitchCase="4">{{histo1}}</span>
+          <span *ngSwitchCase="5">{{histo1}}</span>
+          <span *ngSwitchCase="6">{{histo1}}</span>
         </span >
       </div> 
       </tbody>

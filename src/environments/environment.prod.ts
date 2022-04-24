@@ -3,5 +3,6 @@ export const environment = {
   apiURL:'http://127.0.0.1:3333/',
   IDUSUARIO:0,
   IDRU:0,
-  USUARIOHISTORIAL:[]
+  USUARIOHISTORIAL:[],
+  otro:0
 };

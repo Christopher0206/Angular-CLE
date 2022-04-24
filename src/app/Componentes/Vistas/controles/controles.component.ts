@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { errorMessage, timeMessage } from 'src/app/funciones/alertas';
 import { hMotores } from 'src/app/models/hmotores';
 import { Motores } from 'src/app/models/motores';
 import { Sensor } from 'src/app/models/sensor';
@@ -13,7 +14,7 @@ import { environment } from 'src/environments/environment.prod';
   styleUrls: ['./controles.component.css']
 })
 export class ControlesComponent implements OnInit {
-  sensores: Sensor[] | undefined
+  sensores!: Sensor[]
   sid = 0
   motor!: hMotores;
   constructor(private sensorS: SensorService, private usuario: AuthService) {
@@ -27,7 +28,7 @@ export class ControlesComponent implements OnInit {
     })
   }
   ngOnInit(): void {
-
+    
   }
   //pruebas botones issac
   ir() {
@@ -36,6 +37,17 @@ export class ControlesComponent implements OnInit {
     idSensor:5,
     Posicion:"avanzar"
     };
+    this.sensorS.insertarmotores(this.motor).subscribe(
+      (data: any) => {
+        timeMessage('Registrado', 1500);
+        console.log(this.motor);
+        //this.router.navigate(['/login']);
+      },
+      (_error) => {
+        errorMessage('Ha ocurrido un error:\n'+_error);
+        console.log(this.motor);
+      }
+    );
     console.log("avanzar")
   }
   retroceder(){
@@ -44,6 +56,18 @@ export class ControlesComponent implements OnInit {
       idSensor:5,
       Posicion:"retroceder"
       };
+      this.sensorS.insertarmotores(this.motor).subscribe(
+        (data: any) => {
+          timeMessage('Registrado', 1500);
+          console.log(this.motor);
+          //this.router.navigate(['/login']);
+        },
+        (_error) => {
+          errorMessage('Ha ocurrido un error:\n'+_error);
+          console.log(this.motor);
+        }
+      );
+      console.log("avanzar")
     console.log("retroceder")
   }
   stop() {
@@ -52,6 +76,17 @@ export class ControlesComponent implements OnInit {
       idSensor:5,
       Posicion:"stop"
       };
+      this.sensorS.insertarmotores(this.motor).subscribe(
+        (data: any) => {
+          timeMessage('Registrado', 1500);
+          console.log(this.motor);
+          //this.router.navigate(['/login']);
+        },
+        (_error) => {
+          errorMessage('Ha ocurrido un error:\n'+_error);
+          console.log(this.motor);
+        }
+      );
     console.log("stop")
   }
   IZQ() {
@@ -60,6 +95,17 @@ export class ControlesComponent implements OnInit {
       idSensor:6,
       Posicion:"IZQ"
       };
+      this.sensorS.insertarmotores(this.motor).subscribe(
+        (data: any) => {
+          timeMessage('Registrado', 1500);
+          console.log(this.motor);
+          //this.router.navigate(['/login']);
+        },
+        (_error) => {
+          errorMessage('Ha ocurrido un error:\n'+_error);
+          console.log(this.motor);
+        }
+      );
     console.log("IZQ")
   }
   CENTRO() {
@@ -68,6 +114,17 @@ export class ControlesComponent implements OnInit {
       idSensor:6,
       Posicion:"CENTRO"
       };
+      this.sensorS.insertarmotores(this.motor).subscribe(
+        (data: any) => {
+          timeMessage('Registrado', 1500);
+          console.log(this.motor);
+          //this.router.navigate(['/login']);
+        },
+        (_error) => {
+          errorMessage('Ha ocurrido un error:\n'+_error);
+          console.log(this.motor);
+        }
+      );
     console.log("CENTRO")
   }
   DER() {
@@ -76,6 +133,17 @@ export class ControlesComponent implements OnInit {
       idSensor:6,
       Posicion:"DER"
       };
+      this.sensorS.insertarmotores(this.motor).subscribe(
+        (data: any) => {
+          timeMessage('Registrado', 1500);
+          console.log(this.motor);
+          //this.router.navigate(['/login']);
+        },
+        (_error) => {
+          errorMessage('Ha ocurrido un error:\n'+_error);
+          console.log(this.motor);
+        }
+      );
     console.log("DER")
   }
   /*
