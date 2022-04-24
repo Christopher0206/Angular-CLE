@@ -1,13 +1,13 @@
-<section class="container py-4 h-90 gradient-form">
+<section class="container py-4 h-90 gradient-form" id="login">
   <div class="row d-flex justify-content-center align-items-center h-90">
-    <div class="col-md-10">
-      <div class="card rounded-3 text-black">
+    <div class="col-md-10" >
+      <div class="card rounded-3 text-black" id="login">
         <div class="col-lg-6">
           <div class="card-body p-md-4 mx-md-2">
             <div class="text-center">
               <h4 class="mt-1 mb-5 pb-1">Security Car</h4>
             </div>
-            <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <form [formGroup]="loginForm" (ngSubmit)="login()" id="login">
               <h5 class="mt-1 mb-5 pb-1" class="text-center">
                 <p>Iniciar Sesion</p>
               </h5>
@@ -44,7 +44,7 @@
               <!-- <div class="alert alert-danger text-center" role="alert" ></div> -->
 
               <div class="text-center pt-1 mb-5">
-                <button class="btn btn-info btn-block fa-lg" type="submit">
+                <button id="btn" type="submit">
                   <!--[disabled]="contactForm"-->
                   Ingresar
                 </button>
@@ -53,19 +53,11 @@
               <div
                 class="d-flex align-items-center justify-content-center pb-4"
               >
-                <p class="mb-0 me-2">¿Aun no tienes cuenta?</p>
+                <p class="mb-0 me-2" routerLink="../registro-user">¿Aun no tienes cuenta?</p>
 
                 <br />
 
                 <!-- <a href="/link/to/registro-user">Continue</a>-->
-
-                <button
-                  type="button"
-                  class="btn btn-outline-danger"
-                  routerLink="../registro-user"
-                >
-                  Registrarse
-                </button>
               </div>
             </form>
           </div>

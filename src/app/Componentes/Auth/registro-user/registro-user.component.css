@@ -23,3 +23,24 @@
   .form-signin .form-control {
     height: 45px;
   }
+
+  *{
+    color: #141514;
+}
+#btn{
+  text-transform: uppercase;
+  width: 150px;
+  height: 40px;
+  border-radius: 80px;
+  font-size: 16px;
+  line-height: 35px;
+  text-align: center;
+  border: 3px solid #000;
+  display: block;
+  text-decoration: none;
+  margin: 20px auto 1px auto;
+  color: #96aab7;
+  overflow: hidden;        
+  position: relative;
+  background-color: #000;
+}
