@@ -102,4 +102,5 @@
 .imagenes
 {
     height: auto;
+    transform: rotate(90deg);
 }
