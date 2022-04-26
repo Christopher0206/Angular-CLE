@@ -26,7 +26,8 @@ export class ControlesComponent implements OnInit {
   constructor(private sensorS: SensorService,
     private usuario: AuthService,
     private missensores: SensoresindividualService) {
-    this.usuario.ididusuario().subscribe((data: any) => {
+    
+      this.usuario.ididusuario().subscribe((data: any) => {
       this.sid = data
       //console.log(this.sid)
     })
