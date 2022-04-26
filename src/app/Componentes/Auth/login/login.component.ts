@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
           localStorage.setItem("token_access", data.token)
           //localStorage.setItem("usuario", this.loginForm.get('email')?.value)
           console.log("pongo el token:\t" + data.token)
-          this.router.navigate(['ini/control']);
+          this.router.navigate(['home']);
         })
       }, (error) => {
         errorMessage('Usuario o contraseña incorrectas');
