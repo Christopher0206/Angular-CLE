@@ -1,10 +1,6 @@
 <nav class="navbar justify-content-center">
-  <a class="navbar-brand" id="navv">
-    Historial de tus sensores
-  </a>
-  </nav>
-  
-
+  <a class="navbar-brand" id="navv"> Historial de tus sensores </a>
+</nav>
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -132,37 +128,35 @@
       </div>
     </div>
     -->
-    <div class="col">
-      <div class="col col-md-3" *ngFor="let sen1 of histo; let indice=index">
-        <div class="card rounded">
-          <div class="card-image">
-            <span class="card-notify-badge"
-              >Sensor {{ histo[indice]["idSensor"] }}</span
-            >
-          </div>
-          <div class="card-body text-center">
-            <div class="ad-title m-auto">
-              <h5>Nombre:{{ histo[indice]["Nombre"] }}</h5>
-              <p>
-                {{ histo[indice]["Temperatura"] }}
-              </p>
-              <p>
-                {{ histo[indice]["Humedad"] }}
-              </p>
-              <p>{{ histo[indice]["acel_x"] }}</p>
-              <p>{{ histo[indice]["acel_y"] }}</p>
-              <p>{{ histo[indice]["acel_z"] }}</p>
-              <p>{{ histo[indice]["ang_x"] }}</p>
-              <p>{{ histo[indice]["ang_y"] }}</p>
-              <p>{{ histo[indice]["ang_z"] }}</p>
-              <p>{{ histo[indice]["Distancia"] }}</p>
-              <p>{{ histo[indice]["Deteccion"] }}</p>
-              <p>{{indice+1}}</p>
-            </div>
-          </div>
-        </div>
-        
-      </div>
-    </div>
+    <table class="table" id="table">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Valores</th>
+          <th scope="col">Fecha de creacion</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let sen1 of histo; let indice = index">
+        <p hidden="true">{{ indice }}</p>
+        <tr>
+          <th scope="row">{{ histo[indice]["idSensor"] }}</th>
+          <td>{{ histo[indice]["Nombre"] }}</td>
+          <td>
+            <p>{{ histo[indice]["Temperatura"] }}</p>
+            <p>{{ histo[indice]["Humedad"] }}</p>
+            <p>{{ histo[indice]["acel_x"] }}</p>
+            <p>{{ histo[indice]["acel_y"] }}</p>
+            <p>{{ histo[indice]["acel_z"] }}</p>
+            <p>{{ histo[indice]["ang_x"] }}</p>
+            <p>{{ histo[indice]["ang_z"] }}</p>
+            <p>{{ histo[indice]["Distancia"] }}</p>
+            <p>{{ histo[indice]["Deteccion"] }}</p>
+            <p>{{ histo[indice]["Posicion"] }}</p>
+          </td>
+          <td>{{ histo[indice]["Fechacreacion"] }}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
