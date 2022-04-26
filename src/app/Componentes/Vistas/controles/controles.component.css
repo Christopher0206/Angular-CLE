@@ -101,6 +101,9 @@
     }
 .imagenes
 {
+<<<<<<< Updated upstream
     height: auto;
+=======
+>>>>>>> Stashed changes
     transform: rotate(90deg);
 }

@@ -11,6 +11,7 @@ const routes: Routes = [
     path: '',
     children: [
       { path: 'sensores', component: SensorComponent },
+      
       //{ path: 'documentacion', component: DocumentacionComponent },
       //{ path: 'graficas', component: GraficasComponent },
       { path: 'historial', component: HistorialComponent },
