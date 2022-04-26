@@ -31,7 +31,7 @@ export class ControlesComponent implements OnInit {
       //console.log(this.sid)
     })
     console.log("idusuario:" + this.sid)
-    //aqui se asigna en la variable gloval los ids de los sensores
+    //aqui se asigna en la variable global los id's de los sensores
 
     
     this.missensores.miDht11(environment.IDUSUARIO).subscribe((data: any) => {
