@@ -16,11 +16,11 @@ import { SensoresindividualService } from 'src/app/servicio/sensores/Sensoresind
   styleUrls: ['./controles.component.css']
 })
 export class ControlesComponent implements OnInit {
-  sensores!: Sensor[]
+ 
   ultimosregistrosDht11: any[]=[]
   ultimosregistrosHcSr04: any[]=[]
-  ultimosregistrosKy_031!: any[]
-  ultimosregistrosMPU6050!: any[]
+  ultimosregistrosKy_031: any[]=[]
+  ultimosregistrosMPU6050: any[]=[]
   sid = -1
   motor!: hMotores;
   constructor(private sensorS: SensorService,

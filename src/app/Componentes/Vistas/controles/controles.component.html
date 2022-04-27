@@ -10,68 +10,61 @@
     <div class="col col-md-3" *ngFor="let sen1 of ultimosregistrosDht11">
       <div class="card rounded">
         <div class="card-image">
-          <span class="card-notify-badge">Sensor {{ ultimosregistrosDht11[0]["idSensor"] }}</span>
+          <span class="card-notify-badge">Sensor {{ sen1.idSensor}}</span>
         </div>
         <div class="card-body text-center">
           <div class="ad-title m-auto">
-            <h5>Nombre:{{ ultimosregistrosDht11[0]["Nombre"] }}</h5>
+            <h5>Nombre:{{ sen1.Nombre }}</h5>
             <p>
               Temperatura:
-              {{ ultimosregistrosDht11[0]["Temperatura"] }}
+              {{ sen1.Temperatura }}
             </p>
             <p>
               Humedad:
-              {{ ultimosregistrosDht11[0]["Humedad"] }}
+              {{ sen1.Humedad}}
             </p>
           </div>
         </div>
       </div>
       
     </div>
-    <div class="col col-md-3" *ngFor="let sen2 of ultimosregistrosHcSr04">
+    <div class="col col-md-3" *ngFor="let sen1 of ultimosregistrosHcSr04">
       <div class="card rounded">
         <div class="card-image">
           <span class="card-notify-badge"
-            >Sensor {{ ultimosregistrosHcSr04[0]["idSensor"] }}</span
+            >Sensor {{ sen1.idSensor }}</span
           >
         </div>
         <div class="card-body text-center">
           <div class="ad-title m-auto">
             <h5>Nombre:{{ ultimosregistrosHcSr04[0]["Nombre"] }}</h5>
-            <p>
-              
-              {{ ultimosregistrosHcSr04[0]["Temperatura"] }}
-            </p>
-            <p>
-              
-              {{ ultimosregistrosHcSr04[0]["Humedad"] }}
-            </p>
+          
            
           </div>
         </div>
       </div>
       
     </div>
-    <div class="col col-md-3" *ngFor="let sen3 of ultimosregistrosKy_031">
+    <div class="col col-md-3" *ngFor="let sen1 of ultimosregistrosKy_031">
       <div class="card rounded">
         <div class="card-image">
-          <span class="card-notify-badge">Sensor {{ ultimosregistrosKy_031[0]["idSensor"] }}</span
+          <span class="card-notify-badge">Sensor: {{sen1.idSensor}} </span
           >
         </div>
         <div class="card-body text-center">
           <div class="ad-title m-auto">
-            <h5>Nombre:{{ ultimosregistrosKy_031[0]["Nombre"] }}</h5>
-            <p>Deteccion:{{ ultimosregistrosKy_031[0]["Deteccion"] }}</p>
+            <h5>Nombre:{{ sen1.Nombre}}</h5>
+            <p>Deteccion:{{ sen1.Deteccion}}</p>
           </div>
         </div>
       </div>
       
     </div>
-    <div class="col col-md-3" *ngFor="let sen4 of ultimosregistrosMPU6050">
+    <div class="col col-md-3" *ngFor="let sen1 of ultimosregistrosMPU6050">
       <div class="card rounded">
         <div class="card-image">
           <span class="card-notify-badge"
-            >Sensor {{ ultimosregistrosMPU6050[0]["idSensor"] }}</span
+            >Sensor {{ sen1.idSensor }}</span
           >
         </div>
         <div class="card-body text-center">

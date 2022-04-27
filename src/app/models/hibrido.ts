@@ -21,3 +21,18 @@ export interface HIBRIDO {
     idUsuario?: Number
 
 }
+
+
+export interface Grafica {
+    Humedad:string,
+    Temperatura:string,
+    Fechacreacion: Date
+
+}
+
+export interface Grafica2 {
+    Distancia: string,
+    Fechacreacion: Date
+
+
+}

@@ -12,8 +12,8 @@ const routes: Routes = [
     children: [
       { path: 'sensores', component: SensorComponent },
       
-      //{ path: 'documentacion', component: DocumentacionComponent },
-      //{ path: 'graficas', component: GraficasComponent },
+      { path: 'graficas2', component: DocumentacionComponent },
+      { path: 'graficas', component: GraficasComponent },
       { path: 'historial', component: HistorialComponent },
       { path: 'control', component: ControlesComponent },
       { path: '**', redirectTo: '/ini/control' },
